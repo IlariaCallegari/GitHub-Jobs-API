@@ -19,6 +19,9 @@ const IOSSwitch = withStyles((theme) => ({
         border: "none",
       },
     },
+    "&:hover $thumb": {
+      backgroundColor: colors.primary.lightViolet
+    }
   },
   thumb: {
     marginTop: 3.5,
@@ -26,6 +29,7 @@ const IOSSwitch = withStyles((theme) => ({
     width: "0.875rem",
     height: "0.875rem",
     backgroundColor: colors.primary.violet,
+    transition: "all 0.5s",
   },
   track: {
     borderRadius: 26 / 2,

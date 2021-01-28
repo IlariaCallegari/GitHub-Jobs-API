@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
   navbar: {
     backgroundImage: `url(${headerPattern})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    backgroundSize: "100% 100%",
     height: "20%",
   },
   navContainer: {
@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "10%"
+    width: "10%",
   },
 });
 
