@@ -1,0 +1,25 @@
+import { createUseStyles } from "react-jss";
+import headerPattern from "../assets/desktop/bg-pattern-header.svg";
+
+const useStyles = createUseStyles({
+  navbar: {
+    backgroundImage: `url(${headerPattern})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    height: "20%",
+  },
+  navContainer: {
+    padding: "2.75rem 10.3125rem 0 10.3125rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start"
+  },
+  navSwitch: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "10%"
+  },
+});
+
+export default useStyles;
