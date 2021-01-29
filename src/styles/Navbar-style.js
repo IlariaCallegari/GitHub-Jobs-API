@@ -1,8 +1,10 @@
 import { createUseStyles } from "react-jss";
 import headerPattern from "../assets/desktop/bg-pattern-header.svg";
+import colors from "../utils/variables"
 
 const useStyles = createUseStyles({
   navbar: {
+    backgroundColor: colors.secondary.lightGrey,
     backgroundImage: `url(${headerPattern})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
