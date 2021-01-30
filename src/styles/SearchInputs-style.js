@@ -37,7 +37,7 @@ const useStyles = createUseStyles({
     fontFamily: "inherit",
     fontSize: "1rem",
   },
-  positionInput: {
+  descriptionInput: {
     width: "40%",
   },
   locationInput: {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
@@ -6,10 +6,26 @@ import useStyles from "../styles/SearchInputs-style";
 import StyledCheckbox from "./StyledCheckbox";
 
 function SearchInputs(props) {
-  const [checked, setChecked] = React.useState(false);
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
+  //FORM STATE
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [checked, setChecked] = useState(false);
+
+  //events handlers
+  const handleChecked = (e) => {
+    setChecked(e.target.checked);
   };
+
+  const handleDescription = (e) => {
+    console.log(e.target);
+    setDescription(e.target.description);
+  };
+
+  const handleLocation = (e) => {
+    setLocation(e.target.location);
+  };
+
+  //styles variables
   const classes = useStyles();
   const {
     searchInputs,
@@ -18,59 +34,56 @@ function SearchInputs(props) {
     input,
     form,
     searchButton,
-    positionInput,
+    descriptionInput,
     locationInput,
     checkboxInput,
   } = classes;
-  const positionInputClass = classNames(bar, positionInput);
-  const locationInputClass = classNames(bar, locationInput);
-  const checkboxInputClass = classNames(bar, checkboxInput, icon);
+
   return (
-    <div className={searchInputs}>
-    
-      {/* title, position */}
-      <div className={positionInputClass}>
+    <form className={searchInputs}>
+      {/* description */}
+      <div className={classNames(bar, descriptionInput)}>
         <div className={icon}>
           <img src={iconSearch} alt="search icon" />
         </div>
-
-        <form className={form}>
-          <input
-            className={input}
-            type="search"
-            placeholder="Filter by title, companies, expertise..."
-          />
-        </form>
+        <input
+          className={classNames(input, form)}
+          type="search"
+          placeholder="Filter by title, companies, expertise..."
+          value={description}
+          name="description"
+          onChange={handleDescription}
+        />
       </div>
 
       {/* location */}
-      <div className={locationInputClass}>
+      <div className={classNames(bar, locationInput)}>
         <div className={icon}>
           <img src={iconLocation} alt="location icon" />
         </div>
-
-        <form className={form}>
-          <input
-            className={input}
-            type="search"
-            placeholder="Filter by location..."
-          />
-        </form>
+        <input
+          className={classNames(input, form)}
+          type="search"
+          placeholder="Filter by location..."
+          value={location}
+          name="location"
+          onChange={handleLocation}
+        />
       </div>
 
-      {/* full time */}
-      <div className={checkboxInputClass}>
-        <form className={form}>
+      {/* full_time */}
+      <div className={classNames(bar, checkboxInput, icon)}>
+        <div form className={form}>
           <StyledCheckbox
             checked={checked}
-            onChange={handleChange}
+            onChange={handleChecked}
             inputProps={{ "aria-label": "checkbox" }}
           />
-          <label for="checkbox">Full Time Only</label>
+          <label htmlFor="checkbox">Full Time Only</label>
           <button className={searchButton}>Search</button>
-        </form>
+        </div>
       </div>
-    </div>
+    </form>
   );
 }
 
