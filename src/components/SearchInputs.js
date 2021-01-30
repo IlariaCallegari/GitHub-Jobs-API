@@ -17,12 +17,11 @@ function SearchInputs(props) {
   };
 
   const handleDescription = (e) => {
-    console.log(e.target);
-    setDescription(e.target.description);
+    setDescription(e.target.value);
   };
 
   const handleLocation = (e) => {
-    setLocation(e.target.location);
+    setLocation(e.target.value);
   };
 
   //styles variables
