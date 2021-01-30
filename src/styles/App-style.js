@@ -1,5 +1,4 @@
 import { createUseStyles } from "react-jss";
-import colors from "../utils/variables";
 
 const useStyles = createUseStyles({
   app: {
@@ -7,10 +6,9 @@ const useStyles = createUseStyles({
     width: "100vw",
   },
   container: {
-    padding: "0 10.3125rem 0 10.3125rem",
-    width: "100%",
+    margin: "0 auto",
+    width: "80%",
     height: "100%",
-    backgroundColor: colors.secondary.lightGrey,
     position: "relative",
   },
 });

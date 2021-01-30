@@ -3,7 +3,7 @@ import colors from "../utils/variables";
 
 const useStyles = createUseStyles({
   searchInputs: {
-    width: "77%",
+    width: "100%",
     display: "flex",
     borderRadius: "0.3rem",
     position: "absolute",

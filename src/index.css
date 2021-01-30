@@ -5,10 +5,14 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
-  overflow: hidden
+  background-color: #f4f6f8;
+  overflow-x: hidden;
+  font-weight: 300;
+  line-height: 1.25rem;
 }
