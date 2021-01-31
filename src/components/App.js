@@ -30,7 +30,6 @@ function App() {
           setError(error);
         }
       );
-      console.log(...jobs)
   };
 
   return (

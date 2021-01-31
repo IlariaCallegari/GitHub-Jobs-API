@@ -40,6 +40,7 @@ const useStyles = createUseStyles({
   },
   place: {
     color: colors.primary.violet,
+    textTransform: "capitalize",
   },
 });
 

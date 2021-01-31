@@ -1,6 +1,7 @@
 import React from "react";
 import useStyles from "../styles/JobList-style.js";
 import Job from "./Job";
+import {lowerCase} from "../utils/helpers";
 
 function JobList(props) {
   const { jobs } = props;
@@ -18,7 +19,7 @@ function JobList(props) {
           type={job.type}
           title={job.title}
           company={job.company}
-          location={job.location}
+          location={lowerCase(job.location)}
         />
       ))}
     </div>
