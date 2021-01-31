@@ -6,14 +6,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 // Inspired by blueprintjs
 function StyledCheckbox(props) {
   const classes = useStyles();
-
+  const {root, icon, checkedIcon} = classes; 
   return (
     <Checkbox
-      className={classes.root}
+      className={root}
       disableRipple
-      color="default"
-      checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
-      icon={<span className={classes.icon} />}
+      checkedIcon={<span className={clsx(icon, checkedIcon)} />}
+      icon={<span className={icon} />}
       inputProps={{ 'aria-label': 'checkbox' }}
       {...props}
     />

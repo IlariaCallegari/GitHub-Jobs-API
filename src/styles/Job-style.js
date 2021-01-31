@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
 
 const useStyles = createUseStyles({
-  jobspec: {
+  jobBox: {
     background: colors.secondary.white,
     padding: "2rem",
     borderRadius: "0.4rem",
@@ -12,14 +12,12 @@ const useStyles = createUseStyles({
   logo: {
     height: "3.125rem",
     width: "3.125rem",
-    background: "teal",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "0.8rem",
     position: "absolute",
     top: "-1.5rem",
-    color: colors.secondary.white
   },
   jobType: {
     marginTop: "1rem",
@@ -31,7 +29,7 @@ const useStyles = createUseStyles({
       paddingLeft: "0.5rem",
     },
   },
-  jobName: {
+  jobTitle: {
     fontSize: "1.25rem",
     fontWeight: "400",
     marginBottom: "1rem",
@@ -40,7 +38,7 @@ const useStyles = createUseStyles({
   companyName: {
     marginBottom: "2rem",
   },
-  location: {
+  place: {
     color: colors.primary.violet,
   },
 });

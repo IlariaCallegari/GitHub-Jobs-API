@@ -1,23 +1,26 @@
 import React from "react";
 import useStyles from "../styles/JobList-style.js";
-import JobSpec from "./JobSpec";
+import Job from "./Job";
 
-function JobList() {
+function JobList(props) {
+  const { jobs } = props;
+  //STYLE
   const classes = useStyles();
   const { joblist } = classes;
+
   return (
     <div className={joblist}>
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      <JobSpec />
-      
+      {jobs.map((job) => (
+        <Job
+          key={job.id}
+          companyLogo={job.company_logo}
+          hours={job.created_at}
+          type={job.type}
+          title={job.title}
+          company={job.company}
+          location={job.location}
+        />
+      ))}
     </div>
   );
 }

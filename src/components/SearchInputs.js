@@ -11,18 +11,7 @@ function SearchInputs(props) {
   const [location, setLocation] = useState("");
   const [checked, setChecked] = useState(false);
 
-  //events handlers
-  const handleChecked = (e) => {
-    setChecked(e.target.checked);
-  };
-
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handleLocation = (e) => {
-    setLocation(e.target.value);
-  };
+  const { searchJobs } = props;
 
   //styles variables
   const classes = useStyles();
@@ -38,8 +27,29 @@ function SearchInputs(props) {
     checkboxInput,
   } = classes;
 
+  //events handlers
+  const handleChecked = (e) => {
+    setChecked(e.target.checked);
+  };
+
+  const handleDescription = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleLocation = (e) => {
+    setLocation(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchJobs({ description, location, checked });
+    setDescription("");
+    setLocation("");
+    setChecked(false);
+  };
+
   return (
-    <form className={searchInputs}>
+    <form className={searchInputs} onSubmit={handleSubmit}>
       {/* description */}
       <div className={classNames(bar, descriptionInput)}>
         <div className={icon}>
