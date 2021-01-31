@@ -18,6 +18,10 @@ const useStyles = createUseStyles({
     borderRadius: "0.8rem",
     position: "absolute",
     top: "-1.5rem",
+    "& img": {
+      minHeight: "100%",
+      maxWidth: "100%",
+    },
   },
   jobType: {
     marginTop: "1rem",

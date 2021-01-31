@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
     width: "100%",
   },
   input: {
-    width: "100%",
+    width: "80%",
     outline: "none",
     border: "none",
     color: colors.secondary.darkGrey,

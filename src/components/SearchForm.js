@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import useFormState from "../hooks/useFormState";
 import classNames from "classnames";
 import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
-import useStyles from "../styles/SearchInputs-style";
+import useStyles from "../styles/SearchForm-style";
 import StyledCheckbox from "./StyledCheckbox";
 
-function SearchInputs(props) {
+function SearchForm(props) {
   //FORM STATE
-  const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
-  const [checked, setChecked] = useState(false);
+  const [description, setDescription, resetDescription] = useFormState("");
+  const [location, setLocation, resetLocation] = useFormState("");
+  const [checked, setChecked, resetChecked] = useFormState(false);
 
   const { searchJobs } = props;
 
@@ -27,26 +28,17 @@ function SearchInputs(props) {
     checkboxInput,
   } = classes;
 
-  //events handlers
-  const handleChecked = (e) => {
-    setChecked(e.target.checked);
-  };
-
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handleLocation = (e) => {
-    setLocation(e.target.value);
-  };
-
+  //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();
     searchJobs({ description, location, checked });
-    setDescription("");
-    setLocation("");
-    setChecked(false);
   };
+
+  const handleReset = () => {
+    resetDescription(); 
+    resetLocation(); 
+    resetChecked()
+  }
 
   return (
     <form className={searchInputs} onSubmit={handleSubmit}>
@@ -61,7 +53,7 @@ function SearchInputs(props) {
           placeholder="Filter by title, companies, expertise..."
           value={description}
           name="description"
-          onChange={handleDescription}
+          onChange={setDescription}
         />
       </div>
 
@@ -76,7 +68,7 @@ function SearchInputs(props) {
           placeholder="Filter by location..."
           value={location}
           name="location"
-          onChange={handleLocation}
+          onChange={setLocation}
         />
       </div>
 
@@ -85,15 +77,15 @@ function SearchInputs(props) {
         <div form className={form}>
           <StyledCheckbox
             checked={checked}
-            onChange={handleChecked}
+            onChange={setChecked}
             inputProps={{ "aria-label": "checkbox" }}
           />
           <label htmlFor="checkbox">Full Time Only</label>
-          <button className={searchButton}>Search</button>
+          <button className={searchButton} onClick={handleReset}>Search</button>
         </div>
       </div>
     </form>
   );
 }
 
-export default SearchInputs;
+export default SearchForm;

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import SearchInputs from "./SearchInputs";
+import SearchForm from "./SearchForm";
 import JobList from "./JobList";
 import useStyles from "../styles/App-style";
 
@@ -16,7 +16,20 @@ function App() {
   const classes = useStyles();
   const { app, container } = classes;
 
-  const searchJobs = (jobspec) => {
+  // useEffect(() => {
+  //   //get data from API on page load
+  //   const jobs = searchJobs();
+  //   console.log(jobs)
+  //   return jobs;
+  // }, [jobs]);
+
+  const searchJobs = (
+    jobspec = {
+      description: "software engineer",
+      location: "new york",
+      checked: false,
+    }
+  ) => {
     const jobSearch = { ...jobspec };
     fetch(
       `${URL}description=${jobSearch.description}&full_time=${jobSearch.checked}&location=${jobSearch.location}`
@@ -36,7 +49,7 @@ function App() {
     <div className={app}>
       <Navbar />
       <div className={container}>
-        <SearchInputs searchJobs={searchJobs} />
+        <SearchForm searchJobs={searchJobs} />
         <JobList jobs={jobs} />
       </div>
     </div>
