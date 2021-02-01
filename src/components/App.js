@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm";
 import JobList from "./JobList";
 import useStyles from "../styles/App-style";
 
+
 const URL =
   "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?";
 
@@ -48,10 +49,8 @@ function App() {
   return (
     <div className={app}>
       <Navbar />
-      <div className={container}>
-        <SearchForm searchJobs={searchJobs} />
-        <JobList jobs={jobs} />
-      </div>
+      <SearchForm searchJobs={searchJobs} />
+      <JobList jobs={jobs} />
     </div>
   );
 }

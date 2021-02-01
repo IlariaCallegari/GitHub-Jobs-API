@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useFormState from "../hooks/useFormState";
 import classNames from "classnames";
 import iconSearch from "../assets/desktop/icon-search.svg";
@@ -10,8 +10,7 @@ function SearchForm(props) {
   //FORM STATE
   const [description, setDescription, resetDescription] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
-  const [checked, setChecked, resetChecked] = useFormState(false);
-
+  const [checked, setChecked] = useState(false);
   const { searchJobs } = props;
 
   //styles variables
@@ -33,11 +32,15 @@ function SearchForm(props) {
     e.preventDefault();
     searchJobs({ description, location, checked });
   };
-
+  
   const handleReset = () => {
-    resetDescription(); 
-    resetLocation(); 
-    resetChecked()
+    resetDescription();
+    resetLocation();
+    setChecked(false);
+  };
+
+  const handleChecked = (e) => {
+    setChecked(e.target.checked)
   }
 
   return (
@@ -52,7 +55,6 @@ function SearchForm(props) {
           type="search"
           placeholder="Filter by title, companies, expertise..."
           value={description}
-          name="description"
           onChange={setDescription}
         />
       </div>
@@ -67,21 +69,22 @@ function SearchForm(props) {
           type="search"
           placeholder="Filter by location..."
           value={location}
-          name="location"
           onChange={setLocation}
         />
       </div>
 
       {/* full_time */}
       <div className={classNames(bar, checkboxInput, icon)}>
-        <div form className={form}>
+        <div className={form}>
           <StyledCheckbox
             checked={checked}
-            onChange={setChecked}
+            onChange={handleChecked}
             inputProps={{ "aria-label": "checkbox" }}
           />
           <label htmlFor="checkbox">Full Time Only</label>
-          <button className={searchButton} onClick={handleReset}>Search</button>
+          <button className={searchButton} onClick={handleReset}>
+            Search
+          </button>
         </div>
       </div>
     </form>

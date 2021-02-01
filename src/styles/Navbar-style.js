@@ -11,7 +11,9 @@ const useStyles = createUseStyles({
     height: "20%",
   },
   navContainer: {
-    padding: "2.75rem 10.3125rem 0 10.3125rem",
+    margin: "0 auto",
+    paddingTop: "2.75rem",
+    width: "80%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-start"

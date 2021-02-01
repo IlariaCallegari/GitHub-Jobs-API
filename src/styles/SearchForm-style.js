@@ -3,12 +3,14 @@ import colors from "../utils/variables";
 
 const useStyles = createUseStyles({
   searchInputs: {
-    width: "100%",
+    width: "80%",
+    margin: "0 auto",
     display: "flex",
     borderRadius: "0.3rem",
     position: "absolute",
     overflow: "hidden",
-    top: "-4.5%",
+    top: "16.5%",
+    left: "10%",
     zIndex: 10,
   },
   bar: {
@@ -54,7 +56,7 @@ const useStyles = createUseStyles({
   },
   searchButton: {
     marginLeft: "1rem",
-    padding: "1rem 2rem 1rem 2rem",
+    padding: "1rem 2rem",
     fontFamily: "inherit",
     fontSize: "inherit",
     color: colors.secondary.white,
