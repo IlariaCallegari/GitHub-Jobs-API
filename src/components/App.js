@@ -4,7 +4,6 @@ import SearchForm from "./SearchForm";
 import JobList from "./JobList";
 import useStyles from "../styles/App-style";
 
-
 const URL =
   "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?";
 
@@ -15,14 +14,13 @@ function App() {
 
   //STYLE
   const classes = useStyles();
-  const { app, container } = classes;
+  const { app } = classes;
 
-  // useEffect(() => {
-  //   //get data from API on page load
-  //   const jobs = searchJobs();
-  //   console.log(jobs)
-  //   return jobs;
-  // }, [jobs]);
+  useEffect(() => {
+    //get data from API on page load
+    const jobs = searchJobs();
+    return jobs;
+  }, [jobs]);
 
   const searchJobs = (
     jobspec = {

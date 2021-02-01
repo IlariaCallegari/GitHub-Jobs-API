@@ -9,6 +9,10 @@ const useStyles = createUseStyles({
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
     height: "20%",
+    width: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0
   },
   navContainer: {
     margin: "0 auto",

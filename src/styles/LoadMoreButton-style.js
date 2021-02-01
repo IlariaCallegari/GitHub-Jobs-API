@@ -2,12 +2,6 @@ import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
 
 const useStyles = createUseStyles({
-  container: {
-    textAlign: "center",
-    position: "absolute",
-    left: "45%",
-    bottom: "0%"
-  },
   button: {
     padding: "1rem 2rem",
     fontFamily: "inherit",

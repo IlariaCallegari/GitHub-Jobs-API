@@ -3,7 +3,7 @@ import { useState } from "react";
 const useFormState = (initialVal) => {
   const [value, setValue] = useState(initialVal);
   const handleChange = (e) => {
-    setValue(e.target.value || e.target.checked);
+    setValue(e.target.value);
   };
   const reset = () => {
     setValue("");
