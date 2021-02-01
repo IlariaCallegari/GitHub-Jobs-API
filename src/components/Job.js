@@ -12,7 +12,7 @@ function Job(props) {
         <img className={logo} src={companyLogo} alt={`${company} logo`} />
       </div>
       <div className={jobType}>
-        <span><ReactTimeAgo date={date} locale="en-us"/></span> • <span>{type}</span>
+        <span><ReactTimeAgo date={date} locale="en-us"/></span> •  <span>{type}</span>
       </div>
       <div className={jobTitle}>{title}</div>
       <div className={companyName}>{company}</div>
