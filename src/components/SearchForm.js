@@ -10,7 +10,7 @@ function SearchForm(props) {
   //FORM STATE
   const [description, setDescription, resetDescription] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useFormState(false);
   const { searchJobs } = props;
 
   //styles variables
@@ -38,10 +38,6 @@ function SearchForm(props) {
     resetLocation();
     setChecked(false);
   };
-
-  const handleChecked = (e) => {
-    setChecked(e.target.checked)
-  }
 
   return (
     <form className={searchInputs} onSubmit={handleSubmit}>
@@ -78,7 +74,7 @@ function SearchForm(props) {
         <div className={form}>
           <StyledCheckbox
             checked={checked}
-            onChange={handleChecked}
+            onChange={setChecked}
             inputProps={{ "aria-label": "checkbox" }}
           />
           <label htmlFor="checkbox">Full Time Only</label>
