@@ -1,27 +1,30 @@
-import React, { useState } from "react";
-import useFormState from "../hooks/useFormState";
+import React, { useContext, useState } from "react";
 import classNames from "classnames";
+import { ThemeContext } from "../contexts/ThemeContext";
+import useFormState from "../hooks/useFormState";
 import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
-import useStyles from "../styles/SearchForm-style";
 import StyledCheckbox from "./StyledCheckbox";
+import Button from "./Button";
+import useStyles from "../assets/styles/Form-style";
 
-function SearchForm(props) {
+function Form({ searchJobs }) {
   //FORM STATE
   const [description, setDescription, resetDescription] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
   const [checked, setChecked] = useState(false);
-  const { searchJobs } = props;
+
+  //CONTEXT
+  const { isDark } = useContext(ThemeContext);
 
   //styles variables
-  const classes = useStyles();
+  const classes = useStyles(isDark);
   const {
-    searchInputs,
+    form,
     bar,
     icon,
     input,
-    form,
-    searchButton,
+    insideForm,
     descriptionInput,
     locationInput,
     checkboxInput,
@@ -31,9 +34,6 @@ function SearchForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     searchJobs({ description, location, checked });
-  };
-
-  const handleReset = () => {
     resetDescription();
     resetLocation();
     setChecked(false);
@@ -44,14 +44,14 @@ function SearchForm(props) {
   };
 
   return (
-    <form className={searchInputs} onSubmit={handleSubmit}>
+    <form className={form} onSubmit={handleSubmit}>
       {/* description */}
       <div className={classNames(bar, descriptionInput)}>
         <div className={icon}>
           <img src={iconSearch} alt="search icon" />
         </div>
         <input
-          className={classNames(input, form)}
+          className={classNames(input, insideForm)}
           type="search"
           placeholder="Filter by title, companies, expertise..."
           value={description}
@@ -65,7 +65,7 @@ function SearchForm(props) {
           <img src={iconLocation} alt="location icon" />
         </div>
         <input
-          className={classNames(input, form)}
+          className={classNames(input, insideForm)}
           type="search"
           placeholder="Filter by location..."
           value={location}
@@ -75,20 +75,18 @@ function SearchForm(props) {
 
       {/* full_time */}
       <div className={classNames(bar, checkboxInput, icon)}>
-        <div className={form}>
+        <div className={insideForm}>
           <StyledCheckbox
             checked={checked}
             onChange={handleChecked}
             inputProps={{ "aria-label": "checkbox" }}
           />
           <label htmlFor="checkbox">Full Time Only</label>
-          <button className={searchButton} onClick={handleReset}>
-            Search
-          </button>
+          <Button text="Search"></Button>
         </div>
       </div>
     </form>
   );
 }
 
-export default SearchForm;
+export default Form;

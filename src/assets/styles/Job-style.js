@@ -1,14 +1,16 @@
 import { createUseStyles } from "react-jss";
-import colors from "../utils/variables";
+import colors from "../../utils/variables";
 
 const useStyles = createUseStyles({
-  jobBox: {
-    background: colors.secondary.white,
+  jobBox: (isDark) => ({
+    background: isDark ? colors.primary.veryDarkBlue : colors.secondary.white,
     padding: "2rem",
     borderRadius: "0.4rem",
     position: "relative",
     color: colors.secondary.darkGrey,
-  },
+    textAlign: "left",
+    transition: "all 0.5s ease-in",
+  }),
   logo: {
     height: "3.125rem",
     width: "3.125rem",
@@ -33,12 +35,17 @@ const useStyles = createUseStyles({
       paddingLeft: "0.5rem",
     },
   },
-  jobTitle: {
+  jobTitle: (isDark) => ({
     fontSize: "1.25rem",
     fontWeight: "400",
     marginBottom: "1rem",
-    color: colors.primary.veryDarkBlue,
-  },
+    color: isDark ? colors.secondary.white : colors.primary.veryDarkBlue,
+    transition: "all 0.5s ease-in",
+    cursor: "pointer",
+    "&:hover": {
+      color: colors.secondary.darkGrey,
+    },
+  }),
   companyName: {
     marginBottom: "2rem",
   },

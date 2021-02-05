@@ -1,35 +1,24 @@
-import React from "react";
-import useStyles from "../styles/JobList-style.js";
-import Job from "./Job";
-import { lowerCase } from "../utils/helpers";
+import React, { memo, useContext } from "react";
+import { JOB_PER_PAGE} from "../App";
+import List from "./List";
+import Button from "./Button";
+import useStyles from "../assets/styles/JobList-style.js";
+import { JobContext } from "../contexts/JobContext";
 
-function JobList(props) {
-  const { jobs } = props;
+function JobList() {
+  const {jobs} = useContext(JobContext)
   //STYLE
   const classes = useStyles();
-  const { joblist, button, listContainer } = classes;
+  const { container } = classes;
 
   return (
-    <div className={listContainer}>
-      <div className={joblist}>
-        {jobs.map(
-          (job, idx) =>
-            idx <= 11 && (
-              <Job
-                key={job.id}
-                companyLogo={job.company_logo}
-                date={job.created_at}
-                type={job.type}
-                title={job.title}
-                company={job.company}
-                location={lowerCase(job.location)}
-              />
-            )
-        )}
-      </div>
-      {jobs.length > 11 ? <button className={button}>Load More</button> : null}
+    <div className={container}>
+      <List />
+      {jobs.length > JOB_PER_PAGE && (
+        <Button text="Load More" />
+      )}
     </div>
   );
 }
 
-export default JobList;
+export default memo(JobList);

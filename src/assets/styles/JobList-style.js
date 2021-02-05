@@ -1,11 +1,11 @@
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
-  app: {
-    minHeight: "100vh",
-    width: "100vw",
-    overflowX: "hidden",
-    position: "relative"
+  container: {
+    width: "80%",
+    margin: "5rem auto 0 auto",
+    paddingBottom: "5rem",
+    textAlign: "center"
   },
 });
 

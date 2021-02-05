@@ -1,10 +1,11 @@
-import React from "react";
-import useStyles from "../styles/Job-style";
+import React, { memo, useContext } from "react";
 import ReactTimeAgo from "react-time-ago";
+import { ThemeContext } from "../contexts/ThemeContext";
+import useStyles from "../assets/styles/Job-style";
 
-function Job(props) {
-  const { date, type, companyLogo, title, location, company } = props;
-  const classes = useStyles();
+function Job({ date, type, companyLogo, title, location, company }) {
+  const { isDark } = useContext(ThemeContext);
+  const classes = useStyles(isDark);
   const { jobBox, logo, jobType, jobTitle, companyName, place } = classes;
   return (
     <div className={jobBox}>
@@ -12,7 +13,10 @@ function Job(props) {
         <img className={logo} src={companyLogo} alt={`${company} logo`} />
       </div>
       <div className={jobType}>
-        <span><ReactTimeAgo date={date} locale="en-us"/></span> •  <span>{type}</span>
+        <span>
+          <ReactTimeAgo date={date} locale="en-US" />
+        </span>{" "}
+        • <span>{type}</span>
       </div>
       <div className={jobTitle}>{title}</div>
       <div className={companyName}>{company}</div>
@@ -21,4 +25,4 @@ function Job(props) {
   );
 }
 
-export default Job;
+export default memo(Job);

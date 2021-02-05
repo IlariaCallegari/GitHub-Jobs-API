@@ -1,8 +1,8 @@
 import { withStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
-import colors from "../utils/variables";
+import colors from "../../utils/variables";
 
-const IOSSwitch = withStyles((theme) => ({
+const MySwitch = withStyles((theme) => ({
   root: {
     width: "2.8125rem",
     height: "1.5rem",
@@ -20,8 +20,8 @@ const IOSSwitch = withStyles((theme) => ({
       },
     },
     "&:hover $thumb": {
-      backgroundColor: colors.primary.lightViolet
-    }
+      backgroundColor: colors.primary.lightViolet,
+    },
   },
   thumb: {
     marginTop: 3.5,
@@ -55,4 +55,10 @@ const IOSSwitch = withStyles((theme) => ({
   );
 });
 
-export default IOSSwitch;
+const styles = {
+  main: {
+    margin: 0,
+  },
+};
+
+export {MySwitch, styles};
