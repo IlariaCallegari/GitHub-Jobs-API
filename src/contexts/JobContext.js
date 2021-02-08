@@ -5,12 +5,16 @@ const JobContext = createContext();
 
 function JobProvider(props) {
   const [jobs, setJobs] = useState(seedJobList);
-  const [jobList, setJobList] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <JobContext.Provider
-      value={{ jobs, setJobs, jobList, setJobList, isLoaded, setIsLoaded }}
+      value={{
+        jobs,
+        setJobs,
+        isLoaded,
+        setIsLoaded,
+      }}
     >
       {props.children}
     </JobContext.Provider>

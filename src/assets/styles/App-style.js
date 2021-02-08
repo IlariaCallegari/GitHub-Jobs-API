@@ -6,6 +6,7 @@ const useStyle = createUseStyles({
     backgroundColor: isDark
       ? colors.primary.midnight
       : colors.secondary.lightGrey,
+    minWidth: "100%",
     transition: "all 0.5s ease-in",
   }),
 });

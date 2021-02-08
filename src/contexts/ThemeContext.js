@@ -6,7 +6,7 @@ function ThemeProvider(props) {
   const [isDark, setTheme] = useState(false);
   const [checked, setChecked] = useState(false);
 
-  const toggleTheme = (e) => {
+  const toggleTheme = () => {
     setTheme(!isDark);
   };
 
@@ -16,7 +16,9 @@ function ThemeProvider(props) {
   };
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme, checked, handleChange }}>
+    <ThemeContext.Provider
+      value={{ isDark, toggleTheme, checked, handleChange }}
+    >
       {props.children}
     </ThemeContext.Provider>
   );

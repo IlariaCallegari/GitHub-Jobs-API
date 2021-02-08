@@ -3,7 +3,6 @@ import { ThemeContext } from "./contexts/ThemeContext";
 import Header from "./Parts/Header/Header";
 import Main from "./components/Main";
 import useStyle from "./assets/styles/App-style";
-import { fetchJobs } from "./services/api";
 
 const JOB_PER_PAGE = 12;
 const MAX_JOB_PER_PAGE = 50;
@@ -45,7 +44,7 @@ function App() {
   return (
     <div className={app}>
       <Header />
-      <Main searchJobs={fetchJobs} />
+      <Main/>
     </div>
   );
 }
