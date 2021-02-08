@@ -5,7 +5,7 @@ import Button from "./Button";
 import useStyles from "../assets/styles/JobList-style.js";
 
 function JobList() {
-  const { numClick, setNumClick, isLoaded } = useContext(JobContext);
+  const { numClick, setNumClick, displayedJobs, jobs } = useContext(JobContext);
   
   const classes = useStyles();
   const { container } = classes;
@@ -13,7 +13,7 @@ function JobList() {
   return (
     <div className={container}>
       <List />
-      {!isLoaded && (
+      {displayedJobs.length !== jobs.length && (
         <Button
           text="Load More"
           handleclick={() => setNumClick(numClick + 1)}
