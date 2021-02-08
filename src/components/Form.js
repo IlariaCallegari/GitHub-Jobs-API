@@ -6,9 +6,10 @@ import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
 import StyledCheckbox from "./StyledCheckbox";
 import Button from "./Button";
+import {fetchJobs} from "../services/api"
 import useStyles from "../assets/styles/Form-style";
 
-function Form({ searchJobs }) {
+function Form() {
   //FORM STATE
   const [description, setDescription, resetDescription] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
@@ -33,7 +34,7 @@ function Form({ searchJobs }) {
   //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchJobs({ description, location, checked });
+    fetchJobs({ description, location, checked });
     resetDescription();
     resetLocation();
     setChecked(false);

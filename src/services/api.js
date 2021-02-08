@@ -1,6 +1,6 @@
-const CORS_URL = "https://allorigins.win/";
+// const CORS_URL = "https://allorigins.win/";
+const CORS_URL = "https://cors-anywhere.herokuapp.com/";
 const API_URL = "https://jobs.github.com/positions.json?";
-// const CORS_URL = "https://cors-anywhere.herokuapp.com/";
 
 const fetchJobs = async ({ ...jobspec }) => {
   try {
