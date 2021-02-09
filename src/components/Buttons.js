@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import classNames from "classnames";
 import useStyles from "../assets/styles/Button-style.js";
+import { ThemeContext } from "../contexts/ThemeContext.js";
 
 function ButtonPrimary({ text, handleclick }) {
   const classes = useStyles();
@@ -14,7 +15,8 @@ function ButtonPrimary({ text, handleclick }) {
 }
 
 function ButtonSecondary({ text, handleclick }) {
-  const classes = useStyles();
+  const {isDark} = useContext(ThemeContext);
+  const classes = useStyles(isDark);
   const { buttonSecondary, general} = classes;
 
   return (

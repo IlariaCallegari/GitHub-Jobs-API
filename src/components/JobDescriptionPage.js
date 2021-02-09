@@ -1,5 +1,5 @@
 import React from "react";
-import CompanyName from "./CompanyName";
+import CompanyInfo from "./CompanyInfo";
 import JobDescription from "./JobDescription";
 import useStyles from "../assets/styles/General-style";
 
@@ -8,7 +8,7 @@ function JobDescriptionPage() {
     const {general} = classes; 
   return (
     <div className={general}>
-      <CompanyName />
+      <CompanyInfo />
       <JobDescription />
     </div>
   );

@@ -23,13 +23,15 @@ const useStyles = createUseStyles({
       backgroundColor: colors.primary.lightViolet,
     },
   },
-  buttonSecondary: {
-    backgroundColor: "rgba(89, 100, 224, 0.15)",
-    color: colors.primary.violet,
+  buttonSecondary: (isDark) => ({
+    backgroundColor: isDark
+      ? "rgba(255, 255, 255, 0.15)"
+      : "rgba(89, 100, 224, 0.15)",
+    color: isDark ? colors.secondary.white : colors.primary.violet,
     "&:hover": {
-        backgroundColor:"rgba(89, 100, 224, 0.35)",
-      },
-  },
+      backgroundColor: "rgba(89, 100, 224, 0.35)",
+    },
+  }),
 });
 
 export default useStyles;
