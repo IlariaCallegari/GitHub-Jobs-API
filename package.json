@@ -17,6 +17,9 @@
     "react-time-ago": "^6.2.2",
     "web-vitals": "^0.2.4"
   },
+  "optionalDependencies": {
+    "fsevents": "2.3.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
