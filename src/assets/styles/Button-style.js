@@ -1,24 +1,35 @@
-import {createUseStyles} from "react-jss"; 
-import colors from "../../utils/variables"
+import { createUseStyles } from "react-jss";
+import colors from "../../utils/variables";
 
-const useStyle = createUseStyles({
-    button: {
-        marginLeft: "1rem",
-        padding: "1rem 2rem",
-        fontFamily: "inherit",
-        fontSize: "inherit",
-        color: colors.secondary.white,
-        backgroundColor: colors.primary.violet,
-        border: "none",
-        borderRadius: "0.3rem",
-        outline: "none",
-        cursor: "pointer",
-        transition: "all 0.3s",
-        boxShadow: "10px 5px 25px -7px rgba(0,0,0,0.35)",
-        "&:hover": {
-          backgroundColor: colors.primary.lightViolet,
-          transform: "translateY(0.1rem)",
-    }
-}})
+const useStyles = createUseStyles({
+  general: {
+    marginLeft: "1rem",
+    padding: "1rem 2rem",
+    fontFamily: "inherit",
+    fontSize: "inherit",
+    border: "none",
+    borderRadius: "0.3rem",
+    outline: "none",
+    cursor: "pointer",
+    transition: "all 0.3s",
+    "&:hover": {
+      transform: "translateY(0.1rem)",
+    },
+  },
+  buttonPrimary: {
+    color: colors.secondary.white,
+    backgroundColor: colors.primary.violet,
+    "&:hover": {
+      backgroundColor: colors.primary.lightViolet,
+    },
+  },
+  buttonSecondary: {
+    backgroundColor: "rgba(89, 100, 224, 0.15)",
+    color: colors.primary.violet,
+    "&:hover": {
+        backgroundColor:"rgba(89, 100, 224, 0.35)",
+      },
+  },
+});
 
-export default useStyle; 
+export default useStyles;

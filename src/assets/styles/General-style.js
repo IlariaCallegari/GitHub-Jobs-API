@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
-  main: {
+  general: {
     height: "100%",
     marginTop: "-2.5rem",
   },

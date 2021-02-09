@@ -5,7 +5,7 @@ import useFormState from "../hooks/useFormState";
 import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
 import StyledCheckbox from "./StyledCheckbox";
-import Button from "./Button";
+import {ButtonPrimary} from "./Buttons";
 import {fetchJobs} from "../services/api"
 import useStyles from "../assets/styles/Form-style";
 
@@ -83,7 +83,7 @@ function Form() {
             inputProps={{ "aria-label": "checkbox" }}
           />
           <label htmlFor="checkbox">Full Time Only</label>
-          <Button text="Search"></Button>
+          <ButtonPrimary text="Search" buttonStyle="buttonPrimary" />
         </div>
       </div>
     </form>

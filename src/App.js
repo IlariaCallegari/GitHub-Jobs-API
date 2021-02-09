@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { JobContext, JOB_PER_PAGE } from "./contexts/JobContext";
-// import {fetchJobs} from "./services/api";
+import { fetchJobs } from "./services/api";
 import Header from "./Parts/Header/Header";
 import Main from "./components/Main";
+import JobDescriptionPage from "./components/JobDescriptionPage";
 import useStyle from "./assets/styles/App-style";
-import { fetchJobs } from "./services/api";
 
 const MAX_JOB_PER_PAGE = 50;
 
@@ -14,13 +15,9 @@ function App() {
   // const [pageParam, setPageParam] = useState(0);
   const [error, setError] = useState(null);
   const { isDark } = useContext(ThemeContext);
-  const {
-    jobs,
-    setJobs,
-    numClick,
-    setDisplayedJobs,
-    setIsLoaded,
-  } = useContext(JobContext);
+  const { jobs, setJobs, numClick, setDisplayedJobs, setIsLoaded } = useContext(
+    JobContext
+  );
 
   useEffect(() => {
     setDisplayedJobs([...jobs.slice(0, JOB_PER_PAGE * numClick)]);
@@ -45,13 +42,21 @@ function App() {
 
   if (error) {
     return <div>Error: {error.message}</div>;
-    //remember to change into !isLoaded
   } else {
     return (
-      <div className={app}>
-        <Header />
-        <Main />
-      </div>
+      <Router>
+        <Switch>
+          <div className={app}>
+            <Header />
+            <Route exact path="/">
+              <Main />
+            </Route>
+            <Route exact path="/job-description/:id">
+              <JobDescriptionPage />
+            </Route>
+          </div>
+        </Switch>
+      </Router>
     );
   }
 }
