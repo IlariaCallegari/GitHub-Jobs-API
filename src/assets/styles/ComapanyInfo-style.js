@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     borderRadius: "0.4rem",
     overflow: "hidden",
     display: "flex",
-    transition: "all 0.4s ease-in",
+    transition: "all 0.5s ease-in",
   }),
   logo: {
     width: "8.75rem",
@@ -29,7 +29,7 @@ const useStyles = createUseStyles({
     fontSize: "1.5rem",
     marginBottom: "1rem",
     color: isDark ? colors.secondary.white : colors.primary.veryDarkBlue,
-    transition: "all 0.4s ease-in"
+    transition: "all 0.5s ease-in"
   }),
   url: {
     color: colors.secondary.darkGrey,

@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     marginTop: "2rem",
     padding: "2.5rem",
     background: isDark ? colors.primary.veryDarkBlue : colors.secondary.white,
-    transition: "all 0.4s",
+    transition: "all 0.5s ease-in",
   }),
 });
 
