@@ -10,6 +10,7 @@ function JobProvider(props) {
   const [displayedJobs, setDisplayedJobs] = useState([
     ...jobs.slice(0, JOB_PER_PAGE),
   ]);
+  const [isLoading, setIsLoading] = useState(false);
   const [numClick, setNumClick] = useState(1);
 
   return (
@@ -19,6 +20,8 @@ function JobProvider(props) {
         setJobs,
         displayedJobs,
         setDisplayedJobs,
+        isLoading,
+        setIsLoading,
         numClick,
         setNumClick,
       }}

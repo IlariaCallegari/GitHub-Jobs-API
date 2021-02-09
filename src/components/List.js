@@ -2,7 +2,6 @@ import React, { memo, useContext } from "react";
 import { JobContext } from "../contexts/JobContext";
 import Job from "./Job";
 import { lowerCase } from "../utils/helpers";
-
 import useStyles from "../assets/styles/List-style";
 
 function List() {
@@ -12,7 +11,7 @@ function List() {
 
   return (
     <div className={list}>
-      {displayedJobs.map((job, idx) => (
+      {displayedJobs.map((job) => (
         <Job
           key={job.id}
           id={job.id}
