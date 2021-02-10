@@ -13,6 +13,11 @@ function JobProvider(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [numClick, setNumClick] = useState(1);
 
+  const findJob = (id) => {
+    const myJob = jobs.find((job) => job.id === id);
+    return myJob; 
+  };
+
   return (
     <JobContext.Provider
       value={{
@@ -24,6 +29,7 @@ function JobProvider(props) {
         setIsLoading,
         numClick,
         setNumClick,
+        findJob
       }}
     >
       {props.children}
