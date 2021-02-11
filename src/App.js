@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { JobContext, JOB_PER_PAGE } from "./contexts/JobContext";
 import { fetchJobs } from "./services/api";
@@ -15,9 +19,14 @@ function App() {
   // const [pageParam, setPageParam] = useState(0);
   const [error, setError] = useState(null);
   const { isDark } = useContext(ThemeContext);
-  const { jobs, setJobs, numClick, setDisplayedJobs, setIsLoaded } = useContext(
-    JobContext
-  );
+  const {
+    jobs,
+    setJobs,
+    numClick,
+    setDisplayedJobs,
+    setIsLoaded,
+    findJob,
+  } = useContext(JobContext);
 
   useEffect(() => {
     setDisplayedJobs([...jobs.slice(0, JOB_PER_PAGE * numClick)]);
@@ -51,9 +60,11 @@ function App() {
             <Route exact path="/">
               <Main />
             </Route>
-            <Route exact path="/job-description/:id">
-              <JobDescriptionPage />
-            </Route>
+            <Route
+              exact
+              path="/job-description/:id"
+              render={(routeProps) => <JobDescriptionPage jobSelected={findJob(routeProps.match.params.id)} />}
+            ></Route>
           </div>
         </Switch>
       </Router>

@@ -28,7 +28,7 @@ const useStyles = createUseStyles({
       marginTop: "-0.4rem"
     },
   }),
-  description: {
+  jobDescription: {
     marginTop: "1.5rem",
     lineHeight: "1.625rem"
   }

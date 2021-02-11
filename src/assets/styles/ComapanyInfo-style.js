@@ -15,7 +15,10 @@ const useStyles = createUseStyles({
   logo: {
     width: "8.75rem",
     height: "100%",
-    background: "pink",
+    "& img": {
+      minHeight: "100%",
+      maxWidth: "100%",
+    }
   },
   infos: {
     width: "calc(100% - 8.75rem)",
@@ -24,7 +27,7 @@ const useStyles = createUseStyles({
     alignItems: "center",
     padding: "0 2.5rem 0 2.5rem",
   },
-  company: isDark => ({
+  companyName: isDark => ({
     fontWeight: "400",
     fontSize: "1.5rem",
     marginBottom: "1rem",

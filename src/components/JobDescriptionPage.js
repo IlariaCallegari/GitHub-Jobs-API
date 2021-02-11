@@ -5,15 +5,16 @@ import useStyles from "../assets/styles/General-style";
 import HowToApply from "./HowToApply";
 import Footer from "../Parts/Footer/Footer"
 
-function JobDescriptionPage() {
+function JobDescriptionPage({jobSelected}) {
     const classes = useStyles();
     const {general} = classes; 
+    
   return (
     <div className={general}>
-      <CompanyInfo />
-      <JobDescription />
-      <HowToApply />
-      <Footer />
+      <CompanyInfo jobSelected={jobSelected}/>
+      <JobDescription jobSelected={jobSelected}/>
+      <HowToApply jobSelected={jobSelected}/>
+      <Footer jobSelected={jobSelected}/>
     </div>
   );
 }
