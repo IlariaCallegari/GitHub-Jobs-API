@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { ButtonPrimary } from "./Buttons";
+import Button from "./Button";
 import useStyles from "../assets/styles/JobDescription-style";
+import { parseHTML } from "../utils/helpers";
+import ReactTimeAgo from "react-time-ago/commonjs/ReactTimeAgo";
 
 function JobDescription({ jobSelected }) {
-  const { title, location, type, description } = jobSelected;
+  const { title, location, type, description, created_at } = jobSelected;
   const { isDark } = useContext(ThemeContext);
   const classes = useStyles(isDark);
   const { container, position, jobDescription } = classes;
@@ -13,14 +15,20 @@ function JobDescription({ jobSelected }) {
       <div className={position}>
         <div>
           <p>
-            <span>Time</span> • <span>{type}</span>{" "}
+            <span>
+              <ReactTimeAgo date={created_at} locale="en-us" />
+            </span>{" "}
+            • <span>{type}</span>{" "}
           </p>
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <p>{location}</p>
         </div>
-        <ButtonPrimary text="Apply Now" />
+        <Button text="Apply Now" />
       </div>
-      <div className={jobDescription}>{description}</div>
+      <div
+        className={jobDescription}
+        dangerouslySetInnerHTML={{ __html: parseHTML(description) }}
+      ></div>
     </div>
   );
 }

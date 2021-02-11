@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
         backgroundColor: colors.primary.violet,
         color: colors.secondary.white,
         borderRadius: "0.4rem",
-        padding: "2rem 2.5rem 2rem 2.5rem",
+        padding: "2rem 3rem 2rem 3rem",
         "& p": {
             lineHeight: "1.625rem",
 

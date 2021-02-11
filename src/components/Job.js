@@ -19,9 +19,11 @@ function Job({ date, type, companyLogo, title, location, company, id }) {
         </span>{" "}
         • <span>{type}</span>
       </div>
-      <div >
+      <div>
         <NavLink to={`/job-description/${id}`}>
-          <a className={jobTitle}>{title}</a>
+          <a className={jobTitle} href>
+            {title}
+          </a>
         </NavLink>
       </div>
       <div className={companyName}>{company}</div>

@@ -42,11 +42,13 @@ const useStyles = createUseStyles({
     color: isDark ? colors.secondary.white : colors.primary.veryDarkBlue,
     transition: "all 0.5s ease-in",
     cursor: "pointer",
+    lineHeight: "1.8rem",
     "&:hover": {
       color: colors.secondary.darkGrey,
     },
   }),
   companyName: {
+    marginTop: "1rem",
     marginBottom: "2rem",
   },
   place: {

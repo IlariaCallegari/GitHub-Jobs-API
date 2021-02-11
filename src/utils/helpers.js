@@ -6,4 +6,7 @@ const lowerCase = (str) => {
   }
 };
 
-export { lowerCase };
+const parseHTML = (str) => str.replace(/\u21B5/g, "<br/>");
+const parseURL = (str) => str.replace(/^(https?):\/\//, "");
+
+export { lowerCase, parseHTML, parseURL };

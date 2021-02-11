@@ -1,26 +1,28 @@
 import React, { useContext } from "react";
-import { ButtonSecondary } from "./Buttons";
 import useStyles from "../assets/styles/ComapanyInfo-style";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { parseURL } from "../utils/helpers";
 
-function CompanyInfo({jobSelected}) {
-  const {company_logo, company, company_url} = jobSelected; 
+function CompanyInfo({ jobSelected }) {
+  const { company_logo, company, company_url } = jobSelected;
   const { isDark } = useContext(ThemeContext);
   const classes = useStyles(isDark);
-  const { header, logo, infos, companyName, url } = classes;
+  const { header, logo, infos, companyName, url, button } = classes;
   return (
     <div className={header}>
       <div className={logo}>
-        <img src={company_logo} alt={`${company}logo`}/>
+        <img src={company_logo} alt={`${company}logo`} />
       </div>
       <div className={infos}>
         <div>
           <h3 className={companyName}>{jobSelected.company}</h3>
-          <a href={`${company_url}`} className={url}>
-          {company_url}
+          <p className={url}>{parseURL(company_url)}</p>
+        </div>
+        <div>
+          <a href={`${company_url}`} className={button}>
+            Company Site
           </a>
         </div>
-        <ButtonSecondary text="Company Site" />
       </div>
     </div>
   );

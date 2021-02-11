@@ -1,7 +1,7 @@
 import React, { memo, useContext } from "react";
 import { JobContext } from "../contexts/JobContext";
 import List from "./List";
-import { ButtonPrimary } from "./Buttons";
+import Button from "./Button";
 import Loader from "./Loader";
 import useStyles from "../assets/styles/JobList-style.js";
 
@@ -18,7 +18,7 @@ function JobList() {
       {/* turn isLoaded into !isLoaded */}
       {isLoaded ? <Loader /> : <List />}
       {!isLoaded && displayedJobs.length !== jobs.length && (
-        <ButtonPrimary
+        <Button
           text="Load More"
           handleclick={() => setNumClick(numClick + 1)}
         />

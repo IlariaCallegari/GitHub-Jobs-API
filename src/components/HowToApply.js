@@ -1,7 +1,7 @@
 import React from "react";
 import useStyles from "../assets/styles/HowToApply-style";
 
-function HowToApply() {
+function HowToApply({jobSelected}) {
   const classes = useStyles();
   const { box } = classes;
   return (

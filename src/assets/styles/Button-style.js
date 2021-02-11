@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 import colors from "../../utils/variables";
 
 const useStyles = createUseStyles({
-  general: {
+  button: {
     marginLeft: "1rem",
     padding: "1rem 2rem",
     fontFamily: "inherit",
@@ -12,26 +12,13 @@ const useStyles = createUseStyles({
     outline: "none",
     cursor: "pointer",
     transition: "all 0.3s",
-    "&:hover": {
-      transform: "translateY(0.1rem)",
-    },
-  },
-  buttonPrimary: {
     color: colors.secondary.white,
     backgroundColor: colors.primary.violet,
     "&:hover": {
+      transform: "translateY(0.1rem)",
       backgroundColor: colors.primary.lightViolet,
     },
   },
-  buttonSecondary: (isDark) => ({
-    backgroundColor: isDark
-      ? "rgba(255, 255, 255, 0.15)"
-      : "rgba(89, 100, 224, 0.15)",
-    color: isDark ? colors.secondary.white : colors.primary.violet,
-    "&:hover": {
-      backgroundColor: "rgba(89, 100, 224, 0.35)",
-    },
-  }),
 });
 
 export default useStyles;

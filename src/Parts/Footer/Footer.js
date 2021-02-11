@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 import useStyles from "../../assets/styles/Footer-style";
-import { ButtonPrimary } from "../../components/Buttons";
+import Button from "../../components/Button";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
-function Footer() {
+function Footer({jobSelected}) {
   const { isDark } = useContext(ThemeContext);
-
   const classes = useStyles(isDark);
+  const {company, title} = jobSelected; 
   const { footer, container, jobTitle} = classes;
   return (
     <div className={footer}>
       <div className={container}>
           <div>
-              <h3 className={jobTitle}>Job Title</h3>
-              <p>Company</p>
+              <h3 className={jobTitle}>{title}</h3>
+              <p>{company}</p>
           </div>
-          <ButtonPrimary text="Apply Now"/>
+          <Button text="Apply Now"/>
       </div>
     </div>
   );
