@@ -1,15 +1,28 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import Button from "./Button";
 import useStyles from "../assets/styles/JobDescription-style";
 import { parseHTML } from "../utils/helpers";
 import ReactTimeAgo from "react-time-ago/commonjs/ReactTimeAgo";
+import getUrls from "get-urls";
 
 function JobDescription({ jobSelected }) {
-  const { title, location, type, description, created_at } = jobSelected;
+  const {
+    title,
+    location,
+    type,
+    description,
+    created_at,
+    how_to_apply,
+  } = jobSelected;
   const { isDark } = useContext(ThemeContext);
   const classes = useStyles(isDark);
-  const { container, position, jobDescription } = classes;
+  const { container, position, jobDescription, button } = classes;
+  const urlSet = getUrls(how_to_apply);
+  const getUrl = () => {
+    for (let u of urlSet) {
+      return u;
+    }
+  };
   return (
     <div className={container}>
       <div className={position}>
@@ -23,7 +36,9 @@ function JobDescription({ jobSelected }) {
           <h2>{title}</h2>
           <p>{location}</p>
         </div>
-        <Button text="Apply Now" />
+        <a className={button} href={getUrl()}>
+          Apply Now
+        </a>
       </div>
       <div
         className={jobDescription}

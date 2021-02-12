@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     marginTop: "2rem",
     padding: "3rem",
     background: isDark ? colors.primary.veryDarkBlue : colors.secondary.white,
-    color: colors.secondary.darkGrey,
+    color: isDark ? colors.secondary.gray : colors.secondary.darkGrey,
     transition: "all 0.5s ease-in",
     fontSize: "1rem",
   }),
@@ -30,19 +30,45 @@ const useStyles = createUseStyles({
       marginTop: "-0.4rem",
     },
   }),
+  button: {
+    marginLeft: "1rem",
+    padding: "1rem 2rem",
+    fontFamily: "inherit",
+    fontSize: "inherit",
+    border: "none",
+    borderRadius: "0.3rem",
+    outline: "none",
+    cursor: "pointer",
+    transition: "all 0.3s",
+    color: colors.secondary.white,
+    backgroundColor: colors.primary.violet,
+    "&:hover": {
+      transform: "translateY(0.1rem)",
+      backgroundColor: colors.primary.lightViolet,
+    },
+  },
   jobDescription: (isDark) => ({
     marginTop: "1.5rem",
     lineHeight: "1.6rem",
-    "& p, & ol, & ul, & li, & br, & ul br, & ul li br": {
-      marginTop: 0,
-      marginBottom: 0,
+    "& p, & ol, & br, & ul": {
+      marginTop: "1rem",
+      marginBottom: "0.5rem",
     },
-    "& h2, & h3, & h4, & h5, & h6": {
-      marginTop: 0,
-      marginBottom: 0,
+    "& h1, & h2, & h3, & h4, & h5, & h6": {
+      marginTop: "1rem",
+      marginBottom: "0.5rem",
       fontWeight: "400",
       color: isDark ? colors.secondary.white : colors.primary.veryDarkBlue,
       transition: "all 0.5s ease-in",
+    },
+    "& ul": {
+      "& li": {
+        marginBottom: "0.5rem",
+        "&::marker": {
+          display: "list-item",
+          color: colors.primary.violet,
+        },
+      },
     },
   }),
 });

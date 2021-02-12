@@ -11,9 +11,8 @@ function Job({ date, type, company_logo, title, location, company, id }) {
   const { jobBox, logo, jobType, jobTitle, companyName, place } = classes;
   return (
     <div className={jobBox}>
-      <div>
+      <div className={logo}>
         <img
-          className={logo}
           src={company_logo !== null ? company_logo : imagePlaceHolder}
           alt={`${company} logo`}
         />

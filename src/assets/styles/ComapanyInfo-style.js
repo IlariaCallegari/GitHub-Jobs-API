@@ -12,14 +12,16 @@ const useStyles = createUseStyles({
     display: "flex",
     transition: "all 0.5s ease-in",
   }),
-  logo: {
+  logo: (isDark) => ({
     width: "8.75rem",
-    height: "100%",
-    "& img": {
-      minHeight: "100%",
-      maxWidth: "100%",
-    },
-  },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: isDark
+      ? "rgba(255, 255, 255, 0.15)"
+      : "rgba(89, 100, 224, 0.15)",
+    transition: "all 0.5s ease-in",
+  }),
   infos: {
     width: "calc(100% - 8.75rem)",
     display: "flex",

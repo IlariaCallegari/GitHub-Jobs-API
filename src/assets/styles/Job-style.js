@@ -11,20 +11,26 @@ const useStyles = createUseStyles({
     textAlign: "left",
     transition: "all 0.5s ease-in",
   }),
-  logo: {
-    height: "3.125rem",
+  logo: (isDark) => ({
     width: "3.125rem",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    height: "3.125rem",
     borderRadius: "0.8rem",
     position: "absolute",
     top: "-1.5rem",
+    overflow: "hidden",
+    backgroundColor: isDark
+      ? "rgba(255, 255, 255, 0.15)"
+      : "rgba(89, 100, 224, 0.15)",
+    backgroundSize: "cover",
+    transition: "all 0.5s ease-in",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     "& img": {
-      minHeight: "100%",
-      maxWidth: "100%",
+      width: "100%",
+      height: "auto",
     },
-  },
+  }),
   jobType: {
     marginTop: "1rem",
     marginBottom: "1rem",
