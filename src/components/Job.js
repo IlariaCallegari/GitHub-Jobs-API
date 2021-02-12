@@ -3,15 +3,20 @@ import ReactTimeAgo from "react-time-ago";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../contexts/ThemeContext";
 import useStyles from "../assets/styles/Job-style";
+import imagePlaceHolder from "../assets/desktop/imagePlaceholder.svg";
 
-function Job({ date, type, companyLogo, title, location, company, id }) {
+function Job({ date, type, company_logo, title, location, company, id }) {
   const { isDark } = useContext(ThemeContext);
   const classes = useStyles(isDark);
   const { jobBox, logo, jobType, jobTitle, companyName, place } = classes;
   return (
     <div className={jobBox}>
       <div>
-        <img className={logo} src={companyLogo} alt={`${company} logo`} />
+        <img
+          className={logo}
+          src={company_logo !== null ? company_logo : imagePlaceHolder}
+          alt={`${company} logo`}
+        />
       </div>
       <div className={jobType}>
         <span>

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import useStyles from "../assets/styles/ComapanyInfo-style";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { parseURL } from "../utils/helpers";
+import imagePlaceHolder from "../assets/desktop/imagePlaceholder.svg";
 
 function CompanyInfo({ jobSelected }) {
   const { company_logo, company, company_url } = jobSelected;
@@ -11,7 +12,11 @@ function CompanyInfo({ jobSelected }) {
   return (
     <div className={header}>
       <div className={logo}>
-        <img src={company_logo} alt={`${company}logo`} />
+        <img
+          className={logo}
+          src={company_logo !== null ? company_logo : imagePlaceHolder}
+          alt={`${company} logo`}
+        />
       </div>
       <div className={infos}>
         <div>

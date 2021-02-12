@@ -11,7 +11,6 @@ const useStyles = createUseStyles({
         padding: "2rem 3rem 2rem 3rem",
         "& p": {
             lineHeight: "1.625rem",
-
         }
     },
     

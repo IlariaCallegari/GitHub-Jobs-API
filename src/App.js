@@ -1,9 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { JobContext, JOB_PER_PAGE } from "./contexts/JobContext";
 import { fetchJobs } from "./services/api";
@@ -15,8 +11,6 @@ import useStyle from "./assets/styles/App-style";
 const MAX_JOB_PER_PAGE = 50;
 
 function App() {
-  //app state
-  // const [pageParam, setPageParam] = useState(0);
   const [error, setError] = useState(null);
   const { isDark } = useContext(ThemeContext);
   const {
@@ -35,7 +29,7 @@ function App() {
   // useEffect(() => {
   //   fetchJobs()
   //     .then((data) => {
-  //       console.log(data)
+  //       console.log(data);
   //       setIsLoaded(true);
   //       setJobs([...data]);
   //     })
@@ -43,9 +37,8 @@ function App() {
   //       setIsLoaded(true);
   //       setError(error);
   //     });
-  // }, []);
+  // }, [setIsLoaded, setJobs]);
 
-  //style
   const classes = useStyle(isDark);
   const { app } = classes;
 
@@ -63,7 +56,11 @@ function App() {
             <Route
               exact
               path="/job-description/:id"
-              render={(routeProps) => <JobDescriptionPage jobSelected={findJob(routeProps.match.params.id)} />}
+              render={(routeProps) => (
+                <JobDescriptionPage
+                  jobSelected={findJob(routeProps.match.params.id)}
+                />
+              )}
             ></Route>
           </div>
         </Switch>
