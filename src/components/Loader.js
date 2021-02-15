@@ -1,5 +1,5 @@
 import React from "react";
-import useStyles from "../assets/styles/Loader-style"
+import useStyles from "../styles/Loader-style"
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 function Loader() {

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import clsx from "clsx";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Checkbox from "@material-ui/core/Checkbox";
-import useStyles from "../assets/styles/StyledCheckbox-style";
+import useStyles from "../styles/StyledCheckbox-style";
 
 function StyledCheckbox(props) {
   const { isDark } = useContext(ThemeContext);

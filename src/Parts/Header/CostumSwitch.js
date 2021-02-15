@@ -1,7 +1,7 @@
 import React, { memo, useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext.js";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import { MySwitch, styles } from "../../assets/styles/CostumSwitch-style.js";
+import { MySwitch, styles } from "../../styles/CostumSwitch-style.js";
 import { withStyles } from "@material-ui/core/styles";
 
 const CostumSwitch = memo(({ classes }) => {

@@ -1,5 +1,5 @@
-import React from "react";
-import useStyles from "../assets/styles/HowToApply-style";
+import React, {memo} from "react";
+import useStyles from "../styles/HowToApply-style";
 
 function HowToApply({ jobSelected }) {
   const classes = useStyles();
@@ -12,4 +12,4 @@ function HowToApply({ jobSelected }) {
   );
 }
 
-export default HowToApply;
+export default memo(HowToApply);

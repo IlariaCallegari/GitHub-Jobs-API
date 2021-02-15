@@ -1,7 +1,7 @@
 import React, {memo} from "react";
 import Logo from "./Logo";
 import SunMoonSwitch from "./SunMoonSwitch";
-import useStyles from "../../assets/styles/HeaderWrapper-style";
+import useStyles from "../../styles/HeaderWrapper-style";
 
 function HeaderWrapper() {
   const classes = useStyles();

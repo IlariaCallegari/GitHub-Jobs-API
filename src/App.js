@@ -6,9 +6,7 @@ import fetchJobs from "./services/api";
 import Header from "./Parts/Header/Header";
 import Main from "./components/Main";
 import JobDescriptionPage from "./components/JobDescriptionPage";
-import useStyle from "./assets/styles/App-style";
-
-const MAX_JOB_PER_PAGE = 50;
+import useStyle from "./styles/App-style";
 
 function App() {
   const { isDark } = useContext(ThemeContext);
@@ -69,4 +67,4 @@ function App() {
   }
 }
 
-export { App, MAX_JOB_PER_PAGE };
+export default App;

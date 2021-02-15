@@ -7,7 +7,7 @@ import iconLocation from "../assets/desktop/icon-location.svg";
 import StyledCheckbox from "./StyledCheckbox";
 import Button from "./Button";
 import fetchJobs from "../services/api";
-import useStyles from "../assets/styles/Form-style";
+import useStyles from "../styles/Form-style";
 import { JobContext } from "../contexts/JobContext";
 
 function Form() {

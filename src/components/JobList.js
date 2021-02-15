@@ -3,7 +3,7 @@ import { JobContext } from "../contexts/JobContext";
 import List from "./List";
 import Button from "./Button";
 import Loader from "./Loader";
-import useStyles from "../assets/styles/JobList-style.js";
+import useStyles from "../styles/JobList-style.js";
 
 function JobList() {
   const { numClick, setNumClick, displayedJobs, jobs, isLoading } = useContext(

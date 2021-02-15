@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import useStyles from "../../assets/styles/Footer-style";
+import useStyles from "../../styles/Footer-style";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import getUrls from "get-urls";
 

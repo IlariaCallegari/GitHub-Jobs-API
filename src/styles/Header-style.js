@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import bgPatternHeader from "../desktop/bg-pattern-header.svg";
+import bgPatternHeader from "../assets/desktop/bg-pattern-header.svg";
 
 const useStyle = createUseStyles({
   header: {

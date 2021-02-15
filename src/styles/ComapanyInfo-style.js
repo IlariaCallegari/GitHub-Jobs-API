@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import colors from "../../utils/variables";
+import colors from "../utils/variables";
 
 const useStyles = createUseStyles({
   header: (isDark) => ({

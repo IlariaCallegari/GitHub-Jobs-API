@@ -1,6 +1,6 @@
 import React, {memo} from "react";
 import HeaderWrapper from "./HeaderWrapper";
-import useStyle from "../../assets/styles/Header-style";
+import useStyle from "../../styles/Header-style";
 
 function Header() {
   //style

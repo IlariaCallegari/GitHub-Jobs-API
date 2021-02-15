@@ -1,6 +1,6 @@
 import { withStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
-import colors from "../../utils/variables";
+import colors from "../utils/variables";
 
 const MySwitch = withStyles((theme) => ({
   root: {

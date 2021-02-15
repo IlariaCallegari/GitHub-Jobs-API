@@ -5,7 +5,7 @@ const fetchJobs = async (
   jobspec = {
     description: "software engineer",
     checked: true,
-    location: "London",
+    location: "remote",
   }
 ) =>
   fetch(

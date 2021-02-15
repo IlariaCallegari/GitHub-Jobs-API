@@ -1,9 +1,9 @@
-import React from "react";
+import React, {memo} from "react";
 import CompanyInfo from "./CompanyInfo";
 import JobDescription from "./JobDescription";
-import useStyles from "../assets/styles/General-style";
 import HowToApply from "./HowToApply";
 import Footer from "../Parts/Footer/Footer"
+import useStyles from "../styles/General-style";
 
 function JobDescriptionPage({jobSelected}) {
     const classes = useStyles();
@@ -19,4 +19,4 @@ function JobDescriptionPage({jobSelected}) {
   );
 }
 
-export default JobDescriptionPage;
+export default memo(JobDescriptionPage);

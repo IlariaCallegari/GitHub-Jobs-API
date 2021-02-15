@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
-import TimeAgo from "timeago-react";
-import useStyles from "../assets/styles/JobDescription-style";
-import { parseHTML } from "../utils/helpers";
+import React, { memo, useContext } from "react";
 import getUrls from "get-urls";
+import TimeAgo from "timeago-react";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { parseHTML } from "../utils/helpers";
+import useStyles from "../styles/JobDescription-style";
 
 function JobDescription({ jobSelected }) {
   const {
@@ -50,4 +50,4 @@ function JobDescription({ jobSelected }) {
   );
 }
 
-export default JobDescription;
+export default memo(JobDescription) ;

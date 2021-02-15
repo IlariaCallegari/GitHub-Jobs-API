@@ -2,7 +2,7 @@ import React, { memo, useContext } from "react";
 import TimeAgo from "timeago-react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../contexts/ThemeContext";
-import useStyles from "../assets/styles/Job-style";
+import useStyles from "../styles/Job-style";
 import imagePlaceHolder from "../assets/desktop/imagePlaceholder.svg";
 
 function Job({ created_at, type, company_logo, title, location, company, id }) {

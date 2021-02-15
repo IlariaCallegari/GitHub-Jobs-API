@@ -1,5 +1,5 @@
 import React from "react";
-import useStyles from "../assets/styles/Button-style.js";
+import useStyles from "../styles/Button-style.js";
 
 function Button({ text, handleclick }) {
   const classes = useStyles();
