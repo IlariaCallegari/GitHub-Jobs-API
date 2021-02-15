@@ -18,7 +18,10 @@ function Job({ created_at, type, company_logo, title, location, company, id }) {
         />
       </div>
       <div className={jobType}>
-        <span><TimeAgo datetime={created_at}/></span> • <span>{type}</span>
+        <span>
+          <TimeAgo datetime={created_at} />
+        </span>
+        • <span>{type}</span>
       </div>
       <div>
         <NavLink to={`/job-description/${id}`} className={jobTitle}>

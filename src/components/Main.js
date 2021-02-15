@@ -1,7 +1,7 @@
 import React, {memo} from "react";
 import Form from "./Form";
 import JobList from "./JobList"
-import useStyles from "../assets/styles/General-style";
+import useStyles from "../styles/General-style";
 
 function Main() {
   const classes = useStyles();
