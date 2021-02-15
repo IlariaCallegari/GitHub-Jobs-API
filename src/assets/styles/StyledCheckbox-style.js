@@ -12,10 +12,6 @@ const useStyles = makeStyles({
       width: 24,
       height: 24,
       backgroundColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(25,32,45,0.1)',
-      '$root.Mui-focusVisible &': {
-        outline: `2px auto ${colors.primary.violet} `,
-        outlineOffset: 2,
-      },
       'input:disabled ~ &': {
         boxShadow: 'none',
         background: colors.secondary.lightGrey,

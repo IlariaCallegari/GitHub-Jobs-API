@@ -46,9 +46,9 @@ function App() {
   // } else {
   return (
     <Router>
-      <Switch>
-        <div className={app}>
-          <Header />
+      <div className={app}>
+        <Header />
+        <Switch>
           <Route exact path="/">
             <Main />
           </Route>
@@ -61,8 +61,8 @@ function App() {
               />
             )}
           ></Route>
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   );
 }
