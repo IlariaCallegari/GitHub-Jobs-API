@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import TimeAgo from "timeago-react";
 import useStyles from "../assets/styles/JobDescription-style";
 import { parseHTML } from "../utils/helpers";
-import ReactTimeAgo from "react-time-ago/commonjs/ReactTimeAgo";
 import getUrls from "get-urls";
 
 function JobDescription({ jobSelected }) {
@@ -18,18 +18,20 @@ function JobDescription({ jobSelected }) {
   const classes = useStyles(isDark);
   const { container, position, jobDescription, button } = classes;
   const urlSet = getUrls(how_to_apply);
+
   const getUrl = () => {
     for (let u of urlSet) {
       return u;
     }
   };
+
   return (
     <div className={container}>
       <div className={position}>
         <div>
           <p>
             <span>
-              <ReactTimeAgo date={created_at} locale="en-us" />
+              <TimeAgo datetime={created_at} />
             </span>{" "}
             • <span>{type}</span>{" "}
           </p>

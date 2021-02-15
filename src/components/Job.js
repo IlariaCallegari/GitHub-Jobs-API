@@ -1,11 +1,11 @@
 import React, { memo, useContext } from "react";
-
+import TimeAgo from "timeago-react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../contexts/ThemeContext";
 import useStyles from "../assets/styles/Job-style";
 import imagePlaceHolder from "../assets/desktop/imagePlaceholder.svg";
 
-function Job({ date, type, company_logo, title, location, company, id }) {
+function Job({ created_at, type, company_logo, title, location, company, id }) {
   const { isDark } = useContext(ThemeContext);
   const classes = useStyles(isDark);
   const { jobBox, logo, jobType, jobTitle, companyName, place } = classes;
@@ -18,7 +18,7 @@ function Job({ date, type, company_logo, title, location, company, id }) {
         />
       </div>
       <div className={jobType}>
-        <span>{date}</span> • <span>{type}</span>
+        <span><TimeAgo datetime={created_at}/></span> • <span>{type}</span>
       </div>
       <div>
         <NavLink to={`/job-description/${id}`} className={jobTitle}>

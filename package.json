@@ -16,7 +16,7 @@
     "react-jss": "^10.5.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "react-time-ago": "^6.2.2",
+    "timeago-react": "^3.0.2",
     "web-vitals": "^0.2.4"
   },
   "optionalDependencies": {

@@ -16,7 +16,7 @@ function List() {
           key={job.id}
           id={job.id}
           company_logo={job.company_logo}
-          date={job.created_at}
+          created_at={job.created_at}
           type={job.type}
           title={job.title}
           company={job.company}

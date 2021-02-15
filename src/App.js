@@ -20,6 +20,7 @@ function App() {
     setIsLoading,
     findJob,
     setError,
+    error,
   } = useContext(JobContext);
 
   useEffect(() => {
@@ -41,30 +42,31 @@ function App() {
   const classes = useStyle(isDark);
   const { app } = classes;
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // } else {
-  return (
-    <Router>
-      <div className={app}>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route
-            exact
-            path="/job-description/:id"
-            render={(routeProps) => (
-              <JobDescriptionPage
-                jobSelected={findJob(routeProps.match.params.id)}
-              />
-            )}
-          ></Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else {
+    return (
+      <Router>
+        <div className={app}>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Main />
+            </Route>
+            <Route
+              exact
+              path="/job-description/:id"
+              render={(routeProps) => (
+                <JobDescriptionPage
+                  jobSelected={findJob(routeProps.match.params.id)}
+                />
+              )}
+            ></Route>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export { App, MAX_JOB_PER_PAGE };

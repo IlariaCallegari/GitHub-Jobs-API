@@ -18,7 +18,7 @@ function Form() {
 
   //CONTEXT
   const { isDark } = useContext(ThemeContext);
-  const {setJobs, setLoading, setError} = useContext(JobContext)
+  const { setJobs, setIsLoading, setError } = useContext(JobContext);
 
   //styles variables
   const classes = useStyles(isDark);
@@ -32,16 +32,20 @@ function Form() {
     locationInput,
     checkboxInput,
   } = classes;
- 
+
+  //API Call
   const fetchData = (jobspec) => {
-    fetchJobs(jobspec).then((data) => {
-      const jobs = JSON.parse(data.contents);
-      setJobs(jobs);
-      setLoading(false)
-    }).catch((error) => {
-      setError(error);
-    }) 
-  }
+    fetchJobs(jobspec)
+      .then((data) => {
+        const jobs = JSON.parse(data.contents);
+        setJobs(jobs);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+      });
+  };
+
   //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();

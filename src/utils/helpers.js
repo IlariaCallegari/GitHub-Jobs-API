@@ -10,7 +10,7 @@ const lowerCase = (str) => {
 //break html at u21b5
 const parseHTML = (str) => str.replace(/\u21B5/g, "<br/>");
 
-//replace https:// with empty string 
+//replace https:// with empty string
 const parseURL = (str) => {
   if (str !== null) {
     return str.replace(/^(https?):\/\//, "");
@@ -19,4 +19,4 @@ const parseURL = (str) => {
   }
 };
 
-export { lowerCase, parseHTML, parseURL};
+export { lowerCase, parseHTML, parseURL };
