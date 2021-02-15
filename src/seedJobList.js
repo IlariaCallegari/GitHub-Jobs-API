@@ -354,3 +354,4 @@ const seedJobList = [
   ]
 
 export default seedJobList;
+

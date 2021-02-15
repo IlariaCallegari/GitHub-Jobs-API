@@ -6,8 +6,9 @@ import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
 import StyledCheckbox from "./StyledCheckbox";
 import Button from "./Button";
-import {fetchJobs} from "../services/api"
+import fetchJobs from "../services/api";
 import useStyles from "../assets/styles/Form-style";
+import { JobContext } from "../contexts/JobContext";
 
 function Form() {
   //FORM STATE
@@ -17,6 +18,7 @@ function Form() {
 
   //CONTEXT
   const { isDark } = useContext(ThemeContext);
+  const {setJobs, setLoading, setError} = useContext(JobContext)
 
   //styles variables
   const classes = useStyles(isDark);
@@ -30,11 +32,20 @@ function Form() {
     locationInput,
     checkboxInput,
   } = classes;
-
+ 
+  const fetchData = (jobspec) => {
+    fetchJobs(jobspec).then((data) => {
+      const jobs = JSON.parse(data.contents);
+      setJobs(jobs);
+      setLoading(false)
+    }).catch((error) => {
+      setError(error);
+    }) 
+  }
   //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchJobs({ description, location, checked });
+    fetchData({ description, location, checked });
     resetDescription();
     resetLocation();
     setChecked(false);

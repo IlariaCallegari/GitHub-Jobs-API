@@ -1,5 +1,5 @@
 import React, { memo, useContext } from "react";
-import ReactTimeAgo from "react-time-ago";
+
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../contexts/ThemeContext";
 import useStyles from "../assets/styles/Job-style";
@@ -18,16 +18,11 @@ function Job({ date, type, company_logo, title, location, company, id }) {
         />
       </div>
       <div className={jobType}>
-        <span>
-          <ReactTimeAgo date={date} locale="en-US" />
-        </span>{" "}
-        • <span>{type}</span>
+        <span>{date}</span> • <span>{type}</span>
       </div>
       <div>
-        <NavLink to={`/job-description/${id}`}>
-          <a className={jobTitle} href>
-            {title}
-          </a>
+        <NavLink to={`/job-description/${id}`} className={jobTitle}>
+          {title}
         </NavLink>
       </div>
       <div className={companyName}>{company}</div>

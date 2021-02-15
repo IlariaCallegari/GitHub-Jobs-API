@@ -6,7 +6,7 @@ import Loader from "./Loader";
 import useStyles from "../assets/styles/JobList-style.js";
 
 function JobList() {
-  const { numClick, setNumClick, displayedJobs, jobs, isLoaded } = useContext(
+  const { numClick, setNumClick, displayedJobs, jobs, isLoading } = useContext(
     JobContext
   );
 
@@ -16,8 +16,8 @@ function JobList() {
   return (
     <div className={container}>
       {/* turn isLoaded into !isLoaded */}
-      {isLoaded ? <Loader /> : <List />}
-      {!isLoaded && displayedJobs.length !== jobs.length && (
+      {isLoading ? <Loader /> : <List />}
+      {!isLoading && displayedJobs.length !== jobs.length && (
         <Button
           text="Load More"
           handleclick={() => setNumClick(numClick + 1)}
