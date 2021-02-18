@@ -58,6 +58,9 @@ const useStyles = createUseStyles({
   },
   descriptionInput: {
     width: "40%",
+    [sizes.down("sm")]: {
+      width: "35%",
+    },
     [sizes.down("xs")]: {
       width: "100%",
     },
@@ -82,6 +85,11 @@ const useStyles = createUseStyles({
       },
     },
   }),
+  [sizes.down("sm")]: {
+    checkboxInput: (isDark) => ({
+      width: "35%",
+    }),
+  },
   [sizes.down("xs")]: {
     checkboxInput: (isDark) => ({
       display: "none",

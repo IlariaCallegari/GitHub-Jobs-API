@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
+import sizes from "./breakpoints";
 
 const useStyles = createUseStyles({
   footer: (isDark) => ({
@@ -17,16 +18,22 @@ const useStyles = createUseStyles({
     alignItems: "center",
     color: colors.secondary.darkGrey,
     transition: "all 0.5s ease-in",
+    [sizes.down("lg")]: {
+      width: "60%",
+    },
+    [sizes.down("sm2")]: {
+      width: "90%",
+    },
     "& p": {
-        marginTop: "0.7rem"
-    }
+      marginTop: "0.7rem",
+    },
   },
-  jobTitle: isDark => ({
-      marginBottom: "0rem",
-      marginTop: "1.3rem",
-      fontSize: "1.25rem",
-      color: isDark? colors.secondary.white : colors.primary.veryDarkBlue,
-      transition: "all 0.5s ease-in",
+  jobTitle: (isDark) => ({
+    marginBottom: "0rem",
+    marginTop: "1.3rem",
+    fontSize: "1.25rem",
+    color: isDark ? colors.secondary.white : colors.primary.veryDarkBlue,
+    transition: "all 0.5s ease-in",
   }),
   button: {
     marginLeft: "1rem",

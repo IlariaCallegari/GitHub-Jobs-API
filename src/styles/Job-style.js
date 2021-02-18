@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
+import sizes from "./breakpoints";
 
 const useStyles = createUseStyles({
   jobBox: (isDark) => ({
@@ -11,6 +12,11 @@ const useStyles = createUseStyles({
     textAlign: "left",
     transition: "all 0.5s ease-in",
   }),
+  [sizes.down("sm")]: {
+    jobBox: (isDark) => ({
+      padding: "1.5rem",
+    }),
+  },
   logo: (isDark) => ({
     width: "3.125rem",
     height: "3.125rem",
@@ -53,6 +59,11 @@ const useStyles = createUseStyles({
       color: colors.secondary.darkGrey,
     },
   }),
+  [sizes.down("sm")]: {
+    jobTitle: (isDark) => ({
+      fontSize: "1.15rem",
+    }),
+  },
   companyName: {
     marginTop: "1rem",
     marginBottom: "2rem",

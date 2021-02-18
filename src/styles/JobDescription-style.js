@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
+import sizes from "./breakpoints";
 
 const useStyles = createUseStyles({
   container: (isDark) => ({
@@ -14,6 +15,16 @@ const useStyles = createUseStyles({
     transition: "all 0.5s ease-in",
     fontSize: "1rem",
   }),
+  [sizes.down("lg")]: {
+    container: (isDark) => ({
+      width: "60%",
+    }),
+  },
+  [sizes.down("sm2")]: {
+    container: (isDark) => ({
+      width: "90%",
+    }),
+  },
   position: (isDark) => ({
     display: "flex",
     justifyContent: "space-between",
