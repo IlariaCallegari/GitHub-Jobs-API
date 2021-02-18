@@ -7,6 +7,7 @@ import Header from "./Parts/Header/Header";
 import Main from "./components/Main";
 import JobDescriptionPage from "./components/JobDescriptionPage";
 import useStyle from "./styles/App-style";
+import Page from "./Pages/category/Page";
 
 function App() {
   const { isDark } = useContext(ThemeContext);
@@ -49,15 +50,19 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
-              <Main />
+              <Page>
+                <Main />
+              </Page>
             </Route>
             <Route
               exact
               path="/job-description/:id"
               render={(routeProps) => (
-                <JobDescriptionPage
-                  jobSelected={findJob(routeProps.match.params.id)}
-                />
+                <Page>
+                  <JobDescriptionPage
+                    jobSelected={findJob(routeProps.match.params.id)}
+                  />
+                </Page>
               )}
             ></Route>
           </Switch>

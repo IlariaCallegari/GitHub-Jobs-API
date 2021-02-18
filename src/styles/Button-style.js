@@ -1,5 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
+import sizes from "./breakpoints";
 
 const useStyles = createUseStyles({
   button: {
@@ -14,6 +15,10 @@ const useStyles = createUseStyles({
     transition: "all 0.3s",
     color: colors.secondary.white,
     backgroundColor: colors.primary.violet,
+    [sizes.down("lg")]: {
+      marginLeft: "0.5rem",
+      padding: "1rem 1.25rem"
+    },
     "&:hover": {
       transform: "translateY(0.1rem)",
       backgroundColor: colors.primary.lightViolet,

@@ -1,4 +1,5 @@
 import { createUseStyles } from "react-jss";
+import sizes from "./breakpoints";
 
 const useStyle = createUseStyles({
   sunMoonSwitch: {
@@ -6,6 +7,12 @@ const useStyle = createUseStyles({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    [sizes.down("sm")]: {
+      width: "14%",
+    },
+    [sizes.down("xs")]: {
+      width: "30%",
+    },
   },
 });
 
