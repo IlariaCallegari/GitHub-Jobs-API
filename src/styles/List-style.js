@@ -13,8 +13,10 @@ const useStyles = createUseStyles({
     [sizes.down("sm")]: {
         gridTemplateColumns: "repeat(2, 48%)",
         gridTemplateRows: "repeat(auto-fill, 15rem)",
-        columnGap: "2rem",
-        rowGap: "4rem",
+    },
+    [sizes.down("xs")]: {
+        gridTemplateColumns: "repeat(1, 100%)",
+        gridTemplateRows: "repeat(auto-fill, 15rem)",
     },
   },
 });

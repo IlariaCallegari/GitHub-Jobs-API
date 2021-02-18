@@ -27,6 +27,9 @@ const useStyles = createUseStyles({
     transition: "all 0.5s ease-in",
     "&:nth-child(1), &:nth-child(2)": {
       borderRight: `1px solid ${colors.secondary.darkGrey}`,
+      [sizes.down("xs")]: {
+        borderRight: "none",
+      },
     },
   }),
   icon: {
@@ -43,7 +46,7 @@ const useStyles = createUseStyles({
     backgroundColor: "inherit",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
   input: {
     width: "80%",
@@ -55,9 +58,16 @@ const useStyles = createUseStyles({
   },
   descriptionInput: {
     width: "40%",
+    [sizes.down("xs")]: {
+      width: "100%",
+    },
   },
   locationInput: {
     width: "30%",
+    [sizes.down("xs")]: {
+      display: "none",
+      width: 0,
+    },
   },
   checkboxInput: (isDark) => ({
     display: "flex",
@@ -72,6 +82,12 @@ const useStyles = createUseStyles({
       },
     },
   }),
+  [sizes.down("xs")]: {
+    checkboxInput: (isDark) => ({
+      display: "none",
+      width: 0,
+    }),
+  },
 });
 
 export default useStyles;
