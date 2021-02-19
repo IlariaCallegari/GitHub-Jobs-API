@@ -11,7 +11,7 @@ const useStyle = createUseStyles({
       width: "20%",
     },
     [sizes.down("xs")]: {
-      width: "25%",
+      width: "30%",
     },
   },
 });

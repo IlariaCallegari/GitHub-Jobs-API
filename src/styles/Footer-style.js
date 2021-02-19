@@ -24,6 +24,9 @@ const useStyles = createUseStyles({
     [sizes.down("sm2")]: {
       width: "90%",
     },
+    [sizes.down("xs")]: {
+      width: "100%"
+    },
     "& p": {
       marginTop: "0.7rem",
       [sizes.down("xs")]: {
@@ -53,7 +56,8 @@ const useStyles = createUseStyles({
     [sizes.down("xs")]: {
       width: "100%",
       textAlign: "center",
-      marginTop: "1.5rem"
+      marginTop: "1.5rem",
+      marginRight: "1rem"
     },
     "&:hover": {
       transform: "translateY(0.1rem)",

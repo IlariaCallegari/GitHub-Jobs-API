@@ -1,4 +1,3 @@
-import { CallReceived } from "@material-ui/icons";
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
 import sizes from "./breakpoints";
@@ -73,7 +72,6 @@ const useStyles = createUseStyles({
     backgroundColor: isDark
       ? "rgba(255, 255, 255, 0.15)"
       : "rgba(89, 100, 224, 0.15)",
-    color: isDark ? colors.secondary.white : colors.primary.violet,
     padding: "1rem 2rem",
     fontFamily: "inherit",
     fontSize: "inherit",
@@ -82,6 +80,9 @@ const useStyles = createUseStyles({
     outline: "none",
     cursor: "pointer",
     transition: "all 0.3s",
+    "& a": {
+      color: isDark ? colors.primary.lightViolet : colors.primary.violet,
+    },
     "&:hover": {
       transform: "translateY(0.1rem)",
       backgroundColor: "rgba(89, 100, 224, 0.35)",
@@ -100,8 +101,8 @@ const useStyles = createUseStyles({
       marginTop: "calc(-1.50rem)",
       position: "absolute",
       backgroundColor: isDark
-        ? "rgba(255, 255, 255, 0.15)"
-        : "rgba(89, 100, 224, 0.15)",
+        ? colors.primary.veryDarkBlue
+        : colors.secondary.lightGrey,
       zIndex: "100 !important",
       "& img": {
         zIndex: "200 !important",
