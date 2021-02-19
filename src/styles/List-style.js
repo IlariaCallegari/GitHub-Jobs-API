@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import sizes from "./breakpoints";
+import sizes from "../utils/breakpoints";
 
 const useStyles = createUseStyles({
   list: {

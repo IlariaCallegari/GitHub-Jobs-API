@@ -6,6 +6,7 @@ import iconSearch from "../assets/desktop/icon-search.svg";
 import iconLocation from "../assets/desktop/icon-location.svg";
 import StyledCheckbox from "./StyledCheckbox";
 import Button from "./Button";
+import MobileFilter from "./MobileFilter";
 import fetchJobs from "../services/api";
 import useStyles from "../styles/Form-style";
 import { JobContext } from "../contexts/JobContext";
@@ -26,6 +27,7 @@ function Form() {
     form,
     bar,
     icon,
+    searchIcon,
     input,
     insideForm,
     descriptionInput,
@@ -63,7 +65,7 @@ function Form() {
     <form className={form} onSubmit={handleSubmit}>
       {/* description */}
       <div className={classNames(bar, descriptionInput)}>
-        <div className={icon}>
+        <div className={classNames(icon, searchIcon)}>
           <img src={iconSearch} alt="search icon" />
         </div>
         <input
@@ -73,6 +75,7 @@ function Form() {
           value={description}
           onChange={setDescription}
         />
+        <MobileFilter />
       </div>
 
       {/* location */}

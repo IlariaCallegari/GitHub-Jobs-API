@@ -1,6 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
-import sizes from "./breakpoints";
+import sizes from "../utils/breakpoints";
 
 const useStyles = createUseStyles({
   box: {
@@ -16,9 +16,17 @@ const useStyles = createUseStyles({
     },
     [sizes.down("sm2")]: {
       width: "90%",
+      margin: "2rem auto"
     },
     "& p": {
       lineHeight: "1.625rem",
+    },
+    "& a": {
+      color: colors.secondary.white,
+      transition: "all 0.2s ease-in",
+      "&:hover": {
+        color: colors.primary.lightViolet,
+      },
     },
   },
 });

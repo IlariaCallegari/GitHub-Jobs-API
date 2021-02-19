@@ -1,17 +1,20 @@
 import { createUseStyles } from "react-jss";
-import sizes from "./breakpoints";
+import sizes from "../utils/breakpoints";
 
 const useStyle = createUseStyles({
   sunMoonSwitch: {
-    width: "10%",
+    width: "12%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     [sizes.down("sm")]: {
-      width: "20%",
+      width: "15%",
+    },
+    [sizes.down("sm2")]: {
+      width: "16%",
     },
     [sizes.down("xs")]: {
-      width: "30%",
+      width: "27%",
     },
   },
 });

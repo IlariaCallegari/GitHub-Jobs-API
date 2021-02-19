@@ -1,16 +1,16 @@
 import { createUseStyles } from "react-jss";
-import bgPatternHeader from "../assets/desktop/bg-pattern-header.svg";
-import colors from "../utils/variables";
-import sizes from "./breakpoints";
+import bgPatternDesktop from "../assets/desktop/bg-pattern-header.svg";
+import bgPatternMobile from "../assets/mobile/bg-pattern-header.svg";
+import sizes from "../utils/breakpoints";
 
 const useStyle = createUseStyles({
   header: {
     height: "10.7rem",
-    backgroundImage: `url(${bgPatternHeader})`,
+    backgroundImage: `url(${bgPatternDesktop})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     [sizes.down("xs")]: {
-      backgroundColor: colors.primary.violet,
+      backgroundImage: `url(${bgPatternMobile})`,
     },
   },
 });

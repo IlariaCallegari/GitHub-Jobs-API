@@ -1,6 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
-import sizes from "./breakpoints";
+import sizes from "../utils/breakpoints";
 
 const useStyles = createUseStyles({
   container: (isDark) => ({
@@ -96,6 +96,7 @@ const useStyles = createUseStyles({
   [sizes.down("xs")]: {
     position: (isDark) => ({
       flexDirection: "column",
+      alignItems: "flex-start",
       "& h2": {
         marginTop: "0.5rem",
         marginBottom: "0.5rem",

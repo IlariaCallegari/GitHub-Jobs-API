@@ -1,6 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
-import sizes from "./breakpoints";
+import sizes from "../utils/breakpoints";
 
 const useStyles = createUseStyles({
   form: {
@@ -34,11 +34,19 @@ const useStyles = createUseStyles({
   }),
   icon: {
     padding: "0 1rem 0 1.5rem",
+    [sizes.down("xs")]: {
+      display: "none",
+    },
     "&:last-child": {
       padding: "0 1rem 0 1.2rem",
       [sizes.down("xl")]: {
         padding: "0 0.5rem 0 0.5rem",
       },
+    },
+  },
+  searchIcon: {
+    [sizes.down("xs")]: {
+      display: "none",
     },
   },
   insideForm: {
@@ -47,6 +55,9 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    [sizes.down("xs")]: {
+      marginLeft: "1.5rem",
+    },
   },
   input: {
     width: "80%",
@@ -69,7 +80,7 @@ const useStyles = createUseStyles({
     width: "30%",
     [sizes.down("xs")]: {
       display: "none",
-      width: 0,
+      width: 0
     },
   },
   checkboxInput: (isDark) => ({
@@ -93,7 +104,6 @@ const useStyles = createUseStyles({
   [sizes.down("xs")]: {
     checkboxInput: (isDark) => ({
       display: "none",
-      width: 0,
     }),
   },
 });

@@ -1,6 +1,6 @@
 import { createUseStyles } from "react-jss";
 import colors from "../utils/variables";
-import sizes from "./breakpoints";
+import sizes from "../utils/breakpoints";
 
 const useStyles = createUseStyles({
   button: {
