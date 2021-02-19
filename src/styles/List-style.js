@@ -6,13 +6,11 @@ const useStyles = createUseStyles({
     marginBottom: "3rem",
     display: "grid",
     gridTemplateColumns: "repeat(3, 31%)",
-    gridTemplateRows: "repeat(auto-fill, 15rem)",
     columnGap: "2.5rem",
     rowGap: "4rem",
     justifyItems: "stretch",
     [sizes.down("sm")]: {
       gridTemplateColumns: "repeat(2, 48%)",
-      gridTemplateRows: "repeat(auto-fill, 15rem)",
     },
     [sizes.down("sm2")]: {
       gridTemplateColumns: "repeat(2, 49%)",
@@ -20,7 +18,6 @@ const useStyles = createUseStyles({
     },
     [sizes.down("xs")]: {
       gridTemplateColumns: "repeat(1, 100%)",
-      gridTemplateRows: "repeat(auto-fill, 15rem)",
     },
   },
 });

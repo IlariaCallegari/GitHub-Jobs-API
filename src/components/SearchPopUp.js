@@ -1,8 +1,9 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 import StyledCheckbox from "./StyledCheckbox";
 import iconLocation from "../assets/desktop/icon-location.svg";
 import useStyles from "../styles/SearchPopUp-style";
 import Button from "./Button";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function SearchPopUp({
   isOpen,
@@ -12,7 +13,8 @@ function SearchPopUp({
   checked,
   handleChecked,
 }) {
-  const classes = useStyles();
+  const { isDark } = useContext(ThemeContext);
+  const classes = useStyles(isDark);
   const { form, formBackground, locationBox, checkBox } = classes;
   return isOpen ? (
     <div className={formBackground}>

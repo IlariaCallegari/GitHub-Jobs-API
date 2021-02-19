@@ -10,41 +10,43 @@ const useStyles = createUseStyles({
     zIndex: 300,
     marginTop: "calc(-13.18rem)",
   },
-  form: {
+  form: (isDark) => ({
     width: "80%",
     height: "15rem",
     margin: "0 auto",
-    background: colors.secondary.white,
+    background: isDark ? colors.primary.veryDarkBlue : colors.secondary.white,
     borderRadius: "0.4rem",
     marginTop: "15rem",
     boxShadow:
       "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
     display: "flex",
     flexDirection: "column",
-  },
-  locationBox: {
+  }),
+  locationBox: (isDark) => ({
     padding: "1.5rem 2rem",
     display: "flex",
     justifyContent: "space-between",
-    borderBottom: `2px solid ${colors.secondary.lightGrey}`,
+    borderBottom: `1px solid #707070`,
     "& input": {
       width: "90%",
       border: "none",
       outline: "none",
       fontSize: "1.1rem",
+      background: "inherit",
+      color: isDark ? colors.secondary.gray : colors.primary.veryDarkBlue,
     },
-  },
-  checkBox: {
+  }),
+  checkBox: (isDark) => ({
     padding: "1rem 2rem 0 1.5rem",
     display: "flex",
     alignItems: "center",
     "& label": {
       fontSize: "1.1rem",
-      color: "black",
       fontWeight: "400",
-      marginLeft: "1rem"
+      marginLeft: "1rem",
+      color: isDark ? colors.secondary.gray : colors.primary.veryDarkBlue,
     },
-  },
+  }),
 });
 
 export default useStyles;
