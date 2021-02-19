@@ -7,6 +7,7 @@ const useStyles = createUseStyles({
     display: "none",
     [sizes.down("xs")]: {
       display: "flex",
+      cursor: "pointer"
     },
   },
   filterIcon: {

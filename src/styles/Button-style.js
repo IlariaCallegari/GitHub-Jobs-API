@@ -17,7 +17,10 @@ const useStyles = createUseStyles({
     backgroundColor: colors.primary.violet,
     [sizes.down("lg")]: {
       marginLeft: "0.5rem",
-      padding: "1rem 1.25rem"
+      padding: "1rem 1.25rem",
+    },
+    [sizes.down("xs")]: {
+      margin: "1rem 2rem 0 2rem",
     },
     "&:hover": {
       transform: "translateY(0.1rem)",
