@@ -26,6 +26,9 @@ const useStyles = createUseStyles({
     },
     "& p": {
       marginTop: "0.7rem",
+      [sizes.down("xs")]: {
+        display: "none",
+      },
     },
   },
   jobTitle: (isDark) => ({
@@ -47,10 +50,20 @@ const useStyles = createUseStyles({
     transition: "all 0.3s",
     color: colors.secondary.white,
     backgroundColor: colors.primary.violet,
+    [sizes.down("xs")]: {
+      width: "100%",
+      textAlign: "center",
+      marginTop: "1.5rem"
+    },
     "&:hover": {
       transform: "translateY(0.1rem)",
       backgroundColor: colors.primary.lightViolet,
     },
+  },
+  [sizes.down("xs")]: {
+    jobTitle: (isDark) => ({
+      display: "none",
+    }),
   },
 });
 

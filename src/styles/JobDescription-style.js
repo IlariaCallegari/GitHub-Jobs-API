@@ -15,17 +15,6 @@ const useStyles = createUseStyles({
     transition: "all 0.5s ease-in",
     fontSize: "1rem",
   }),
-  [sizes.down("lg")]: {
-    container: (isDark) => ({
-      width: "60%",
-      padding: "2.5rem",
-    }),
-  },
-  [sizes.down("sm2")]: {
-    container: (isDark) => ({
-      width: "90%",
-    }),
-  },
   position: (isDark) => ({
     display: "flex",
     justifyContent: "space-between",
@@ -59,6 +48,11 @@ const useStyles = createUseStyles({
       margin: 0,
       padding: "1rem 1.5rem",
     },
+    [sizes.down("xs")]: {
+      alignSelf: "stretch",
+      textAlign: "center",
+      padding: "0.5rem",
+    },
     "&:hover": {
       transform: "translateY(0.1rem)",
       backgroundColor: colors.primary.lightViolet,
@@ -88,6 +82,30 @@ const useStyles = createUseStyles({
       },
     },
   }),
+  [sizes.down("lg")]: {
+    container: (isDark) => ({
+      width: "60%",
+      padding: "2.5rem",
+    }),
+  },
+  [sizes.down("sm2")]: {
+    container: (isDark) => ({
+      width: "90%",
+    }),
+  },
+  [sizes.down("xs")]: {
+    position: (isDark) => ({
+      flexDirection: "column",
+      "& h2": {
+        marginTop: "0.5rem",
+        marginBottom: "0.5rem",
+      },
+      "& div p:nth-child(1)": {
+        marginTop: 0,
+        marginBottom: 0
+      }
+    }),
+  },
 });
 
 export default useStyles;
