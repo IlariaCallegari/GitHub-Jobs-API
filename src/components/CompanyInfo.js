@@ -13,7 +13,6 @@ function CompanyInfo({ jobSelected }) {
     <div className={header}>
       <div className={logo}>
         <img
-          className={logo}
           src={company_logo !== null ? company_logo : imagePlaceHolder}
           alt={`${company} logo`}
         />
@@ -23,10 +22,8 @@ function CompanyInfo({ jobSelected }) {
           <h3 className={companyName}>{jobSelected.company}</h3>
           <p className={url}>{parseURL(company_url)}</p>
         </div>
-        <div>
-          <a href={`${company_url}`} className={button}>
-            Company Site
-          </a>
+        <div className={button}>
+          <a href={`${company_url}`}>Company Site</a>
         </div>
       </div>
     </div>

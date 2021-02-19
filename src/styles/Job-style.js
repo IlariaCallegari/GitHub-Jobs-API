@@ -61,7 +61,7 @@ const useStyles = createUseStyles({
   }),
   [sizes.down("sm")]: {
     jobTitle: (isDark) => ({
-      fontSize: "1.15rem",
+      fontSize: "1.1rem",
     }),
   },
   companyName: {

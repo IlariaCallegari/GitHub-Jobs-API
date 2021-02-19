@@ -18,6 +18,7 @@ const useStyles = createUseStyles({
   [sizes.down("lg")]: {
     container: (isDark) => ({
       width: "60%",
+      padding: "2.5rem",
     }),
   },
   [sizes.down("sm2")]: {
@@ -34,6 +35,7 @@ const useStyles = createUseStyles({
       color: isDark ? colors.secondary.white : colors.primary.veryDarkBlue,
       transition: "all 0.5s ease-in",
       fontWeight: "400",
+      fontSize: "1.6rem",
     },
     "& div p:nth-child(3)": {
       color: colors.primary.violet,
@@ -53,6 +55,10 @@ const useStyles = createUseStyles({
     transition: "all 0.3s",
     color: colors.secondary.white,
     backgroundColor: colors.primary.violet,
+    [sizes.down("sm")]: {
+      margin: 0,
+      padding: "1rem 1.5rem",
+    },
     "&:hover": {
       transform: "translateY(0.1rem)",
       backgroundColor: colors.primary.lightViolet,

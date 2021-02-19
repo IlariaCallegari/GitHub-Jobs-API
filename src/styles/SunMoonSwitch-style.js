@@ -8,10 +8,10 @@ const useStyle = createUseStyles({
     justifyContent: "space-between",
     alignItems: "center",
     [sizes.down("sm")]: {
-      width: "14%",
+      width: "20%",
     },
     [sizes.down("xs")]: {
-      width: "30%",
+      width: "25%",
     },
   },
 });
