@@ -17,19 +17,19 @@ function Job({ created_at, type, company_logo, title, location, company, id }) {
           alt={`${company} logo`}
         />
       </div>
-      <div className={jobType}>
-        <span>
-          <TimeAgo datetime={created_at} />
-        </span>
-        • <span>{type}</span>
-      </div>
-      <div>
-        <NavLink to={`/job-description/${id}`} className={jobTitle}>
-          {title}
-        </NavLink>
-      </div>
-      <div className={companyName}>{company}</div>
-      <div className={place}>{location}</div>
+      <NavLink to={`/job-description/${id}`}>
+        <div className={jobType}>
+          <span>
+            <TimeAgo datetime={created_at} />
+          </span>
+          • <span>{type}</span>
+        </div>
+        <div>
+          <h1 className={jobTitle}>{title}</h1>
+        </div>
+        <div className={companyName}>{company}</div>
+        <div className={place}>{location}</div>
+      </NavLink>
     </div>
   );
 }

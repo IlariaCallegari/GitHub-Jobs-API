@@ -8,7 +8,6 @@ const useStyles = createUseStyles({
     padding: "2rem",
     borderRadius: "0.4rem",
     position: "relative",
-    color: colors.secondary.darkGrey,
     textAlign: "left",
     transition: "all 0.5s ease-in",
   }),
@@ -40,6 +39,7 @@ const useStyles = createUseStyles({
   jobType: {
     marginTop: "1rem",
     marginBottom: "1rem",
+    color: colors.secondary.darkGrey,
     "& :nth-child(1)": {
       paddingRight: "0.5rem",
     },
@@ -67,6 +67,7 @@ const useStyles = createUseStyles({
   companyName: {
     marginTop: "1rem",
     marginBottom: "2rem",
+    color: colors.secondary.darkGrey,
   },
   place: {
     color: colors.primary.violet,
