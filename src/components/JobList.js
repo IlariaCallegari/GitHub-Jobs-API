@@ -17,7 +17,7 @@ function JobList() {
   return (
     <div className={container}>
       {isLoading ? <Loader /> : <List />}
-      {displayedJobs.length === 0 && <NoJobsFound/>}
+      {!isLoading && displayedJobs.length === 0 && <NoJobsFound />}
       {!isLoading && displayedJobs.length !== jobs.length && (
         <Button
           text="Load More"

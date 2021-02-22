@@ -17,6 +17,7 @@ function Form() {
   const [description, setDescription, resetDescription] = useFormState("");
   const [location, setLocation, resetLocation] = useFormState("");
   const [checked, setChecked] = useState(false);
+
   //MOBILE FORM STATE
   const [isOpen, setOpen] = useState(false);
 
@@ -24,7 +25,6 @@ function Form() {
   const { isDark } = useContext(ThemeContext);
   const { setJobs, setIsLoading, setError } = useContext(JobContext);
 
-  //styles variables
   const classes = useStyles(isDark);
   const {
     form,
@@ -90,7 +90,7 @@ function Form() {
             value={description}
             onChange={setDescription}
           />
-          <MobileFilter handleClick={handleClick} />
+          <MobileFilter handleClick={handleClick} fetchData={fetchData} />
         </div>
 
         {/* location */}
@@ -99,7 +99,6 @@ function Form() {
             <img src={iconLocation} alt="location icon" />
           </div>
           <input
-            required
             className={classNames(input, insideForm)}
             type="search"
             placeholder="Filter by location..."
