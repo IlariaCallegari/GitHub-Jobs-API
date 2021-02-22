@@ -1,12 +1,19 @@
 import { withStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import colors from "../utils/variables";
+import sizes from "../utils/breakpoints";
 
 const MySwitch = withStyles((theme) => ({
   root: {
     width: "2.8125rem",
     height: "1.5rem",
     padding: 0,
+    [sizes.down("md")]: {
+      width: "2.9rem",
+    },
+    [sizes.down("sm")]: {
+      width: "2.955rem",
+    },
   },
   switchBase: {
     padding: 1,
@@ -61,4 +68,4 @@ const styles = {
   },
 };
 
-export {MySwitch, styles};
+export { MySwitch, styles };
