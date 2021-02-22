@@ -11,18 +11,20 @@ function List() {
 
   return (
     <div className={list}>
-      {displayedJobs.map((job) => (
-        <Job
-          key={job.id}
-          id={job.id}
-          company_logo={job.company_logo}
-          created_at={job.created_at}
-          type={job.type}
-          title={job.title}
-          company={job.company}
-          location={lowerCase(job.location)}
-        />
-      ))}
+      {
+        displayedJobs.map((job) => (
+          <Job
+            key={job.id}
+            id={job.id}
+            company_logo={job.company_logo}
+            created_at={job.created_at}
+            type={job.type}
+            title={job.title}
+            company={job.company}
+            location={lowerCase(job.location)}
+          />
+        ))
+      }
     </div>
   );
 }

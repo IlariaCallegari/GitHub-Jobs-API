@@ -54,6 +54,7 @@ function Form() {
   //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     fetchData({ description, location, checked });
     resetDescription();
     resetLocation();

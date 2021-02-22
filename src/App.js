@@ -1,5 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { JobContext, JOB_PER_PAGE } from "./contexts/JobContext";
 import fetchJobs from "./services/api";
@@ -49,6 +54,7 @@ function App() {
         <div className={app}>
           <Header />
           <Switch>
+            <Redirect exact from="/job-description" to="/" />
             <Route exact path="/">
               <Page>
                 <Main />

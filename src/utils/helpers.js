@@ -13,7 +13,7 @@ const parseHTML = (str) => str.replace(/\u21B5/g, "<br/>");
 //replace https:// with empty string
 const parseURL = (str) => {
   if (str !== null) {
-    return str.replace(/^(https?):\/\//, "");
+    return str.replace(/^(https?):\/\//, "").replace(/\/$/, "");
   } else {
     return "";
   }
