@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { JobContext, JOB_PER_PAGE } from "./contexts/JobContext";
+import ScrollToTop from "./components/HighOrderComponents/ScrollToTop";
 import fetchJobs from "./services/api";
 import Header from "./Parts/Header/Header";
 import Main from "./components/Main";
@@ -51,28 +52,30 @@ function App() {
   } else {
     return (
       <Router>
-        <div className={app}>
-          <Header />
-          <Switch>
-            <Redirect exact from="/job-description" to="/" />
-            <Route exact path="/">
-              <Page>
-                <Main />
-              </Page>
-            </Route>
-            <Route
-              exact
-              path="/job-description/:id"
-              render={(routeProps) => (
+        <ScrollToTop>
+          <div className={app}>
+            <Header />
+            <Switch>
+              <Redirect exact from="/job-description" to="/" />
+              <Route exact path="/">
                 <Page>
-                  <JobDescriptionPage
-                    jobSelected={findJob(routeProps.match.params.id)}
-                  />
+                  <Main />
                 </Page>
-              )}
-            ></Route>
-          </Switch>
-        </div>
+              </Route>
+              <Route
+                exact
+                path="/job-description/:id"
+                render={(routeProps) => (
+                  <Page>
+                    <JobDescriptionPage
+                      jobSelected={findJob(routeProps.match.params.id)}
+                    />
+                  </Page>
+                )}
+              ></Route>
+            </Switch>
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }
