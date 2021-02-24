@@ -75,6 +75,7 @@ function Form() {
             placeholder="Filter by title, companies, expertise..."
             value={description}
             onChange={setDescription}
+            aria-label="Filter by title, companies, expertise..."
           />
           <MobileFilter handleClick={handleClick} fetchData={fetchData} />
         </div>
@@ -90,6 +91,7 @@ function Form() {
             placeholder="Filter by location..."
             value={location}
             onChange={setLocation}
+            aria-label="Filter by location"
           />
         </div>
 

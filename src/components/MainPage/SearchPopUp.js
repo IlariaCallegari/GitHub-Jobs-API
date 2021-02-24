@@ -28,6 +28,7 @@ function SearchPopUp({
             placeholder="Filter by location..."
             value={location}
             onChange={setLocation}
+            aria-label="Filter by location..."
           />
         </div>
         <div className={checkBox}>
