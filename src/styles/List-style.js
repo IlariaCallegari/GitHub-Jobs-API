@@ -5,10 +5,13 @@ const useStyles = createUseStyles({
   list: {
     marginBottom: "3rem",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 31%)",
+    gridTemplateColumns: "repeat(3, 30.5%)",
     columnGap: "2.5rem",
     rowGap: "4rem",
     justifyItems: "stretch",
+    [sizes.up("xl2")]: {
+      gridTemplateColumns: "repeat(3, 31.4%)",
+    },
     [sizes.down("sm")]: {
       gridTemplateColumns: "repeat(2, 48%)",
     },

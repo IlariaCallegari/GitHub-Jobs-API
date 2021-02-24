@@ -6,7 +6,7 @@ const useStyle = createUseStyles({
         margin: "0 auto",
         paddingTop: "2.5rem",
         display: "flex",
-        justifyContent: "space-between",  
+        justifyContent: "space-between", 
     }
 })
 

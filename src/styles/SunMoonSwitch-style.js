@@ -7,6 +7,9 @@ const useStyle = createUseStyles({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    [sizes.up("xl2")]: {
+      width: "7%",
+    },
     [sizes.down("sm")]: {
       width: "15%",
     },

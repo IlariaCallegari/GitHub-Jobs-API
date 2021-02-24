@@ -1,6 +1,11 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  up() {},
+  up(size) {
+    const sizes= {
+      xl2: "1543px"
+    }
+    return `@media(min-width: ${sizes[size]})`
+  },
   down(size) {
     const sizes = {
       xs: "550px",

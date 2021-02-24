@@ -8,6 +8,9 @@ const MySwitch = withStyles((theme) => ({
     width: "2.8125rem",
     height: "1.5rem",
     padding: 0,
+    [sizes.up("xl2")]: {
+      width: "2.6rem",
+    },
     [sizes.down("md")]: {
       width: "2.9rem",
     },

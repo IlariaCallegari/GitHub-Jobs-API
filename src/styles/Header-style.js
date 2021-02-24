@@ -9,6 +9,9 @@ const useStyle = createUseStyles({
     backgroundImage: `url(${bgPatternDesktop})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
+    [sizes.up("xl2")]: {
+      height: "15rem",
+    },
     [sizes.down("xs")]: {
       backgroundImage: `url(${bgPatternMobile})`,
     },

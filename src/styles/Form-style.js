@@ -10,11 +10,8 @@ const useStyles = createUseStyles({
     borderRadius: "0.3rem",
     overflow: "hidden",
     zIndex: 10,
-    [sizes.down("lg")]: {
-      width: "81.5%",
-    },
-    [sizes.down("md")]: {
-      width: "83%",
+    [sizes.up("xl2")]: {
+      width: "74%",
     },
   },
   bar: (isDark) => ({
@@ -55,6 +52,11 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    [sizes.up("xl2")]: {
+      "& label": {
+        flexgrow: 5,
+      },
+    },
     [sizes.down("xs")]: {
       marginLeft: "1.5rem",
     },
@@ -80,7 +82,7 @@ const useStyles = createUseStyles({
     width: "30%",
     [sizes.down("xs")]: {
       display: "none",
-      width: 0
+      width: 0,
     },
   },
   checkboxInput: (isDark) => ({

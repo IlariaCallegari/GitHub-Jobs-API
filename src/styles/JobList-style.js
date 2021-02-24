@@ -1,4 +1,5 @@
 import { createUseStyles } from "react-jss";
+import sizes from "../utils/breakpoints"
 
 const useStyles = createUseStyles({
   container: {
@@ -7,6 +8,9 @@ const useStyles = createUseStyles({
     margin: "5rem auto 0 auto",
     paddingBottom: "5rem",
     textAlign: "center",
+    [sizes.up("xl2")]: {
+      width: "74%"
+    }
   },
 });
 

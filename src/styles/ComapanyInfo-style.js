@@ -5,7 +5,6 @@ import sizes from "../utils/breakpoints";
 const useStyles = createUseStyles({
   header: (isDark) => ({
     width: "50%",
-    height: "8.75rem",
     margin: "0 auto",
     background: isDark ? colors.primary.veryDarkBlue : colors.secondary.white,
     borderRadius: "0.4rem",
@@ -73,6 +72,7 @@ const useStyles = createUseStyles({
       ? "rgba(255, 255, 255, 0.15)"
       : "rgba(89, 100, 224, 0.15)",
     padding: "1rem 2rem",
+    marginBottom: "2rem",
     fontFamily: "inherit",
     fontSize: "inherit",
     border: "none",
@@ -90,7 +90,6 @@ const useStyles = createUseStyles({
   }),
   [sizes.down("xs")]: {
     header: (isDark) => ({
-      height: "14.3rem",
       flexDirection: "column",
       alignItems: "center",
     }),
@@ -108,6 +107,12 @@ const useStyles = createUseStyles({
         zIndex: "200 !important",
       },
     }),
+    companyName: {
+      width: "90%",
+      margin: "0 auto",
+      textAlign: "center",
+      lineHeight: "1.5rem"
+    }
   },
 });
 

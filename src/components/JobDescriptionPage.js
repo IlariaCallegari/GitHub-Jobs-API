@@ -1,21 +1,17 @@
-import React, {memo} from "react";
+import React, { memo } from "react";
 import CompanyInfo from "./CompanyInfo";
 import JobDescription from "./JobDescription";
-import HowToApply from "./HowToApply";
-import Footer from "../Parts/Footer/Footer"
-import useStyles from "../styles/General-style";
+import HowToApplyBox from "./HowToApplyBox";
+import Footer from "../Parts/Footer/Footer";
 
-function JobDescriptionPage({jobSelected}) {
-    const classes = useStyles();
-    const {general} = classes; 
-    
+function JobDescriptionPage({ jobSelected }) {
   return (
-    <div className={general}>
-      <CompanyInfo jobSelected={jobSelected}/>
-      <JobDescription jobSelected={jobSelected}/>
-      <HowToApply jobSelected={jobSelected}/>
-      <Footer jobSelected={jobSelected}/>
-    </div>
+    <React.Fragment>
+      <CompanyInfo jobSelected={jobSelected} />
+      <JobDescription jobSelected={jobSelected} />
+      <HowToApplyBox jobSelected={jobSelected} />
+      <Footer jobSelected={jobSelected} />
+    </React.Fragment>
   );
 }
 

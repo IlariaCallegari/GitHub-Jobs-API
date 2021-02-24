@@ -24,7 +24,6 @@ function SearchPopUp({
             <img src={iconLocation} alt="location icon" />
           </div>
           <input
-            required
             type="search"
             placeholder="Filter by location..."
             value={location}

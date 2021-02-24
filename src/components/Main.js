@@ -1,16 +1,13 @@
-import React, {memo} from "react";
+import React, { memo } from "react";
 import Form from "./Form";
-import JobList from "./JobList"
-import useStyles from "../styles/General-style";
+import JobList from "./JobList";
 
 function Main() {
-  const classes = useStyles();
-  const {general} = classes; 
   return (
-    <section className={general}>
+    <React.Fragment>
       <Form />
       <JobList />
-    </section>
+    </React.Fragment>
   );
 }
 

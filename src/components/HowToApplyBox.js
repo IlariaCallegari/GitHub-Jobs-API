@@ -1,7 +1,7 @@
 import React, {memo} from "react";
-import useStyles from "../styles/HowToApply-style";
+import useStyles from "../styles/HowToApplyBox-style";
 
-function HowToApply({ jobSelected }) {
+function HowToApplyBox({ jobSelected }) {
   const classes = useStyles();
   const { box } = classes;
   return (
@@ -12,4 +12,4 @@ function HowToApply({ jobSelected }) {
   );
 }
 
-export default memo(HowToApply);
+export default memo(HowToApplyBox);

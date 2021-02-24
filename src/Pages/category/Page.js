@@ -1,7 +1,10 @@
 import React from "react";
+import useStyles from "../../styles/General-style";
 
 function Page({ children }) {
-  return <section>{children}</section>;
+  const classes = useStyles();
+  const { general } = classes;
+  return <section className={general}>{children}</section>;
 }
 
 export default Page;
