@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import clsx from "clsx";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import Checkbox from "@material-ui/core/Checkbox";

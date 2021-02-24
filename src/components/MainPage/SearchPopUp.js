@@ -1,4 +1,4 @@
-import React, { memo, useContext } from "react";
+import { memo, useContext } from "react";
 import StyledCheckbox from "./StyledCheckbox";
 import iconLocation from "../../assets/desktop/icon-location.svg";
 import useStyles from "../../styles/SearchPopUp-style";

@@ -1,4 +1,4 @@
-import React, { memo, useContext } from "react";
+import { memo, useContext } from "react";
 import { JobContext } from "../../contexts/JobContext";
 import List from "./List";
 import Button from "../Button";
@@ -7,7 +7,9 @@ import NoJobsFound from "../NoJobs";
 import useStyles from "../../styles/JobList-style.js";
 
 function JobList() {
-  const { numClick, setNumClick, displayedJobs, data, isLoading} = useContext(JobContext);
+  const { numClick, setNumClick, displayedJobs, data, isLoading } = useContext(
+    JobContext
+  );
   const classes = useStyles();
   const { container } = classes;
 

@@ -1,4 +1,3 @@
-import React from "react";
 import useStyles from "../styles/Button-style.js";
 
 function Button({ text, handleclick }) {

@@ -1,4 +1,4 @@
-import React, { memo, useContext } from "react";
+import { memo, useContext } from "react";
 import { JobContext } from "../../contexts/JobContext";
 import Job from "./Job";
 import { lowerCase } from "../../utils/helpers";

@@ -1,4 +1,4 @@
-import React, { memo, useContext } from "react";
+import { memo, useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext.js";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { MySwitch, styles } from "../../styles/CostumSwitch-style.js";

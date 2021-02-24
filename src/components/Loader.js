@@ -1,4 +1,3 @@
-import React from "react";
 import useStyles from "../styles/Loader-style"
 import CircularProgress from "@material-ui/core/CircularProgress";
 

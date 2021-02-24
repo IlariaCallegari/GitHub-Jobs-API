@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import fetchJobs from "../../services/api";
 import classNames from "classnames";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { JobContext } from "../../contexts/JobContext";
@@ -23,7 +22,7 @@ function Form() {
 
   //CONTEXT
   const { isDark } = useContext(ThemeContext);
-  const {setIsLoading, fetchData } = useContext(JobContext);
+  const { setIsLoading, fetchData } = useContext(JobContext);
 
   const classes = useStyles(isDark);
   const {
@@ -38,16 +37,11 @@ function Form() {
     checkboxInput,
   } = classes;
 
-  //API Call
-  const getData = (jobspec) => {
-    fetchData(jobspec)
-  };
-
   //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    getData({ description, location, checked });
+    fetchData({ description, location, checked });
     resetDescription();
     resetLocation();
     setChecked(false);

@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import {memo} from "react";
 import Logo from "./Logo";
 import SunMoonSwitch from "./SunMoonSwitch";
 import useStyles from "../../styles/HeaderWrapper-style";

@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import {memo} from "react";
 import CostumSwitch from "./CostumSwitch";
 import iconSun from "../../assets/desktop/icon-sun.svg";
 import iconMoon from "../../assets/desktop/icon-moon.svg";

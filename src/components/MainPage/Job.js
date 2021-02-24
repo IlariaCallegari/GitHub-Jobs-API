@@ -1,4 +1,4 @@
-import React, { memo, useContext } from "react";
+import { memo, useContext } from "react";
 import TimeAgo from "timeago-react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../contexts/ThemeContext";

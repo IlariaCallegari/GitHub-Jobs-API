@@ -1,4 +1,3 @@
-import React from "react";
 import useStyles from "../../styles/General-style";
 
 function Page({ children }) {
