@@ -1,21 +1,20 @@
 const CORS_URL = "https://api.allorigins.win/get?url=";
 const API_URL = "https://jobs.github.com/positions.json?";
 
-const fetchJobs = async (
-  jobspec = {
+const request = async (
+  urlparams = {
     description: "software engineer",
     checked: true,
     location: "remote",
   }
 ) =>
-  fetch(
+  await fetch(
     `${CORS_URL}${encodeURIComponent(
-      `${API_URL}description=${jobspec.description}&full_time=${jobspec.checked}&location=${jobspec.location}`
+      `${API_URL}description=${urlparams.description}&full_time=${urlparams.checked}&location=${urlparams.location}`
     )}`
   ).then((response) => {
     if (response.ok) return response.json();
     throw new Error("Network response was not ok.");
   });
 
-export default fetchJobs;
-
+export default request;

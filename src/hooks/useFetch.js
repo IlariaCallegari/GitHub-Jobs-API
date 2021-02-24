@@ -1,23 +1,24 @@
-import { useContext, useState } from "react";
-import fetchJobs from "../services/api";
-import { JobContext } from "../contexts/JobContext";
+import {useState, useCallback } from "react";
+import request from "../services/api";
 
-function useFetch() {
-  const { setJobs, setIsLoading } = useContext(JobContext);
+const useFetch = () => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchData = () => {
-    const myJobs = fetchJobs()
-      .then((data) => {
-        const jobs = JSON.parse(data.contents);
-        setJobs(jobs);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-      });
+  const fetchData = useCallback((urlparams) => {
+    request(urlparams)
+    .then((res) => {
+      const jobs = JSON.parse(res.contents);
+      setData(jobs);
+      setIsLoading(false);
+    })
+    .catch((error) => {
+      setError(error);
+    });
+  }, [setIsLoading, setData, setError])
 
-      return myJobs; 
-  };
+  return [fetchData, data, setData, isLoading, setIsLoading, error, setError]
 }
+
 export default useFetch;

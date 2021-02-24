@@ -1,7 +1,7 @@
 import React from "react";
-import useStyles from "../styles/MobileFilter-style";
-import search from "../assets/mobile/icon-search-mobile.svg";
-import filter from "../assets/mobile/icon-filter.svg";
+import useStyles from "../../styles/MobileFilter-style";
+import search from "../../assets/mobile/icon-search-mobile.svg";
+import filter from "../../assets/mobile/icon-filter.svg";
 
 function MobileFilter({ handleClick, fetchData}) {
   const classes = useStyles();

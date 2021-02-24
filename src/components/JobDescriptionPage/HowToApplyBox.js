@@ -1,5 +1,5 @@
 import React, {memo} from "react";
-import useStyles from "../styles/HowToApplyBox-style";
+import useStyles from "../../styles/HowToApplyBox-style";
 
 function HowToApplyBox({ jobSelected }) {
   const classes = useStyles();

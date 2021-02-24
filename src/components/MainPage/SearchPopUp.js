@@ -1,9 +1,9 @@
 import React, { memo, useContext } from "react";
 import StyledCheckbox from "./StyledCheckbox";
-import iconLocation from "../assets/desktop/icon-location.svg";
-import useStyles from "../styles/SearchPopUp-style";
-import Button from "./Button";
-import { ThemeContext } from "../contexts/ThemeContext";
+import iconLocation from "../../assets/desktop/icon-location.svg";
+import useStyles from "../../styles/SearchPopUp-style";
+import Button from "../Button";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 function SearchPopUp({
   isOpen,

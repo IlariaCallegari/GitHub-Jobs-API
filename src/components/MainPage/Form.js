@@ -1,16 +1,16 @@
 import React, { useContext, useState } from "react";
+import fetchJobs from "../../services/api";
 import classNames from "classnames";
-import { ThemeContext } from "../contexts/ThemeContext";
-import useFormState from "../hooks/useFormState";
-import iconSearch from "../assets/desktop/icon-search.svg";
-import iconLocation from "../assets/desktop/icon-location.svg";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { JobContext } from "../../contexts/JobContext";
+import useFormState from "../../hooks/useFormState";
+import iconSearch from "../../assets/desktop/icon-search.svg";
+import iconLocation from "../../assets/desktop/icon-location.svg";
 import StyledCheckbox from "./StyledCheckbox";
-import Button from "./Button";
+import Button from "../Button";
 import MobileFilter from "./MobileFilter";
 import SearchPopUp from "./SearchPopUp";
-import fetchJobs from "../services/api";
-import useStyles from "../styles/Form-style";
-import { JobContext } from "../contexts/JobContext";
+import useStyles from "../../styles/Form-style";
 
 function Form() {
   //FORM STATE
@@ -23,7 +23,7 @@ function Form() {
 
   //CONTEXT
   const { isDark } = useContext(ThemeContext);
-  const { setJobs, setIsLoading, setError } = useContext(JobContext);
+  const {setIsLoading, fetchData } = useContext(JobContext);
 
   const classes = useStyles(isDark);
   const {
@@ -39,23 +39,15 @@ function Form() {
   } = classes;
 
   //API Call
-  const fetchData = (jobspec) => {
-    fetchJobs(jobspec)
-      .then((data) => {
-        const jobs = JSON.parse(data.contents);
-        setJobs(jobs);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-      });
+  const getData = (jobspec) => {
+    fetchData(jobspec)
   };
 
   //event handlers
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetchData({ description, location, checked });
+    getData({ description, location, checked });
     resetDescription();
     resetLocation();
     setChecked(false);

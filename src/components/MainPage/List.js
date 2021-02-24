@@ -1,8 +1,8 @@
 import React, { memo, useContext } from "react";
-import { JobContext } from "../contexts/JobContext";
+import { JobContext } from "../../contexts/JobContext";
 import Job from "./Job";
-import { lowerCase } from "../utils/helpers";
-import useStyles from "../styles/List-style";
+import { lowerCase } from "../../utils/helpers";
+import useStyles from "../../styles/List-style";
 
 function List() {
   const { displayedJobs } = useContext(JobContext);
