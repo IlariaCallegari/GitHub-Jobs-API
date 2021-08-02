@@ -1,4 +1,4 @@
-# GitHub Jonbs API web app solution
+# GitHub Jobs API web app solution
 
 This was a solution to the GitHub Job API web app challenge on Frontend Mentor.
 
